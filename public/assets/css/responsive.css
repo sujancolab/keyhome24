@@ -1,0 +1,283 @@
+#sticky-wrap.stickyhead {
+	position: fixed;
+	top: 0;
+	right:0;
+	left:0;
+/*	background: #fff;*/
+	
+	/*box-shadow: 0 0 10px rgb(236, 223, 223);*/
+	z-index: 99;
+	/*border-bottom: 1px solid #111;*/
+	transition-duration: 0.4s;
+	padding:7px 0;
+}
+	#sticky-wrap.stickyhead.nav_sec.navbar .navbar-nav li a
+	{
+		
+		transition-duration: 0.4s;
+	}
+	
+
+
+
+@media (max-width: 992px){
+
+}
+
+
+
+@media only screen and (min-width:320px) and (max-width:991px) {
+	/*===== comman ===*/
+	
+	.md_res_mar_top_30
+	{
+		margin-top:30px;
+	}
+	.nav_sec
+	{
+		position: relative;
+		/*background: #4c4949 !important;*/
+		top: 0;
+		padding: 12px 0px;
+	}
+	.inner_page_banner_sec
+	{
+		min-height: 210px;
+	}
+	.top_header_left ul li a,
+	.top_header_right ul li a
+	{
+		font-size: 16px;
+	}
+	
+	.bg_animation1 {
+		animation: bg-animate 4s linear infinite
+	}
+	
+	.footer_box {
+		margin-bottom: 20px;
+	}
+	
+}
+@media only screen and (min-width:320px) and (max-width:767px) {
+	
+/*====== Comman ====== */
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.logo_area
+	{
+		display: flex;
+    	align-items: center;
+	}
+	.stellarnav.dark a
+	{
+		color: #000 !important;
+	}
+	/*.nav_sec .stellarnav > ul > li > a {
+		color: #fff !important;
+	}*/
+	.stellarnav.mobile.dark ul {
+		background: #e2e1e1;
+	}
+	.nav_sec .stellarnav > ul > li > a:before
+	{
+		display: none;
+	}
+	.stellarnav.dark a.dd-toggle .icon-plus:before,
+	.stellarnav.dark a.dd-toggle .icon-plus:after
+	{
+		border-color: #000;
+	}
+	.stellarnav.dark .icon-close:before,
+	.stellarnav.dark .icon-close:after
+	{
+		border-color: #000;
+	}
+	.stellarnav.dark .menu-toggle span.bars span {
+		background: #fff;
+	}
+	.sm_res_mar_top_30
+	{
+		margin-top:30px;
+	}
+	.nav_sec .stellarnav.dark
+	{
+		text-align: right;
+	}
+	.stellarnav.mobile.right > ul
+	{
+		text-align:left;
+	}
+	.stellarnav .dd-toggle
+	{
+		position: absolute !important;
+	}
+/*=== Top Header ====*/
+	.nav_sec
+	{
+		
+	}
+	
+	.nav_sec .navbar-brand
+	{
+		display: block;
+	}
+	.logo_box img {
+		max-width: 164px;
+	}
+	
+	.ads_vidget_box
+	{
+		flex-wrap: wrap;
+	}
+	.ads_vidget_box .ads_vidget_trash
+	{
+		margin-top: 10px;
+	}
+	.comman_heading h2
+	
+	{
+		font-size: 30px;
+	}
+	
+	.heading_box h2
+	{
+		font-size: 30px;
+	}
+	
+	.footer_copy p
+	{
+		text-align: center;
+	}
+	.footer_payment_icon
+	{
+		text-align: center;
+		margin-top: 10px;
+	}
+	/*=== footer ===*/
+	#scrollup
+	{
+		right: 16px;
+	}
+	.footer_box {
+		margin-bottom: 30px;
+	}
+	
+
+}
+
+
+@media only screen and (min-width:320px) and (max-width:575px) {
+	
+	.logo_area
+	{
+		width: 40%;
+	}
+	.nav_area
+	{
+		width: 60%;
+	}
+	
+	.stellarnav .menu-toggle
+	{
+		padding: 5px;
+	}
+	.logo_box img {
+		max-width: 114px;
+	}
+	.wizard_header .nav.nav-pills:before
+	{
+		top: 19px;
+	}
+	.wizard_header .wizard_name {
+		font-size: 12px;
+	}
+	.wizard_header .wizard_icon {
+		width: 35px;
+		height: 35px;
+		font-size: 15px;
+	}
+	
+	
+	
+}
+
+@media only screen and (min-width:480px) and (max-width:767px) {
+	
+
+}
+
+@media only screen and (min-width:768px) and (max-width:991px) {
+	/*========= top_header =========*/
+	.logo_area
+	{
+		width: 27%;
+	}
+	.nav_area {
+		width: 73%;
+	}
+	.nav_sec .stellarnav ul
+	{
+		padding: 0 0 0 0;
+	}
+	
+	.nav_sec .stellarnav > ul > li > a
+	{
+		padding: 15px 1px;
+		letter-spacing: 0;
+		    font-size: 14px;
+	}
+	
+	.logo_box img {
+		max-width: 200px;
+	}
+	.heading_box h2
+	{
+		font-size: 31px;
+	}
+	
+	
+	.footer_box .ft_heading
+	{
+		font-size: 19px;
+	}
+	
+}
+
+/********************@media only screen and (min-width:1024px) and (max-width:1200px)********************/
+
+
+@media (min-width:992px) and (max-width:1199px) {
+	
+	.nav_sec.navbar .navbar-nav li a:before
+	{
+		top: 9px;
+    	height: 13px;
+	}
+	.logo_box img {
+		max-width: 200px;
+	}
+	.banner_txt_box h1
+	{
+		font-size: 35px;
+	}
+	.heading_box h2
+	{
+		font-size: 33px;
+	}
+	.ft_contact p,
+	.ft_links ul li a
+	{
+		font-size: 14px;
+	}
+	
+}
+
+	
+/********************@media only screen and (min-width:1201px)********************/
+
+	
+
+/********************@media only screen and (min-width:1201px)********************/
