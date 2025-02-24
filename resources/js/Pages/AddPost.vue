@@ -42,6 +42,7 @@ const form = useForm({
     // Step 5: Publication
     publication_duration: '',
     payment_method: '',
+    _token: document.querySelector('meta[name="csrf-token"]').content,
 });
 // Initialize form after component mounts
 onMounted(() => {
@@ -105,12 +106,29 @@ function handlePdfUpload(event) {
 // Add a function to handle form submission
 function submitForm() {
     console.log(form);
-    form.post('/save-post', {
-        onSuccess: () => {
-            // Handle success, e.g., redirect or show a success message
-        },
-        onError: (errors) => {
-            // Handle errors, e.g., display error messages
+    const formData = new FormData();
+    Object.entries(form.data()).forEach(([key, value]) => {
+        if (key === 'photos' || key === 'documents') {
+            Array.from(value).forEach(file => formData.append(`${key}[]`, file));
+        } else {
+            formData.append(key, value);
+        }
+    });
+
+    axios.post('/save-post', formData, {
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(response => {
+        if (response.data.redirect) {
+            window.location.href = response.data.redirect;
+        }
+    })
+    .catch(error => {
+        if (error.response && error.response.data.errors) {
+            form.errors = error.response.data.errors;
         }
     });
 }

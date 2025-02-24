@@ -21,15 +21,15 @@ import { Link } from '@inertiajs/vue3';
                             <li><Link :href="route('share-accommodation')">Requests</Link></li>
                             <li><a href="">French</a></li>
 
-                            <li class="header_lgn_btn" v-if="!$page.props.auth"><Link :href="route('login')">
+                            <li class="header_lgn_btn" v-if="!$page.props.auth.user"><Link :href="route('login')">
                                     <span class=""><img src="assets/images/user_icon.svg" alt="" /></span>
                                     Login</Link></li>
-                            <li class="header_lgn_btn" v-if="$page.props.auth">
+                            <li class="header_lgn_btn" v-if="$page.props.auth.user">
                                 <Link :href="route('dashboard')">
                                     <span class=""><img src="assets/images/user_icon.svg" alt="" /></span>
                                     Dashboard</Link>
                             </li>
-                            <li class="header_lgn_btn" v-if="$page.props.auth" >
+                            <li class="header_lgn_btn" v-if="$page.props.auth.user" >
                                 <Link :href="route('logout')">
                                     <span class=""><img src="assets/images/user_icon.svg" alt="" /></span>
                                     Logout</Link>

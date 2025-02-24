@@ -11,25 +11,29 @@ class IndexController extends Controller
 {
     public function index(){
         $posts = Post::all();
-        return Inertia::render('Welcome', [
-            'posts' => $posts
-        ]);
+        return view('index')->with(compact('posts'));
+        // return Inertia::render('Welcome', [
+        //     'posts' => $posts
+        // ]);
     }
     //
     public function rentBuy(){
         $posts = Post::all();
-        return Inertia::render('RentBuy', [
-            'posts' => $posts
-        ]);
+        return view('rent-buy')->with(compact('posts'));
+        // return Inertia::render('RentBuy', [
+        //     'posts' => $posts
+        // ]);
     }
     public function shareAccomodation(){
-        return Inertia::render('ShareAccomodation');
+        return view('share-accommodation');
+        // return Inertia::render('ShareAccomodation');
     }
     public function detailView(){
         return Inertia::render('ProductDetail');
     }
     public function addPost(){
-        return Inertia::render('AddPost');
+        return view('add-post');
+        // return Inertia::render('AddPost');
     }
 
     public function savePost(Request $request)
@@ -88,8 +92,9 @@ class IndexController extends Controller
     }
     public function dashboard(){
         $posts = Post::all();
-        return Inertia::render('Dashboard', [
-            'posts' => $posts
-        ]);
+        return view('dashboard')->with(compact('posts'));
+        // return Inertia::render('Dashboard', [
+        //     'posts' => $posts
+        // ]);
     }
 }
