@@ -219,10 +219,10 @@ img {
   position: relative;
 }
 .nav_sec .stellarnav > ul > li {
-  padding: 8px 10px;
+  padding: 0px;
 }
 .nav_sec .stellarnav > ul > li > a {
-  padding: 0;
+  padding: 10px 12px;
   text-transform: capitalize;
   letter-spacing: 0.5px;
   position: relative;
@@ -314,6 +314,106 @@ img {
 }
 .nav_sec .stellarnav > ul > li > a img {
   width: 18px;
+}
+.mobile_logo {
+  width: 160px;
+  position: absolute;
+  top: 11px;
+  left: 15px;
+}
+.mobile_logo img {
+  max-width: 150px;
+}
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle
+{
+  color: #fff;
+  padding: 10px 12px;
+}
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle img
+{
+  width: 17px;
+}
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu{
+  min-width: 130px;
+  top: 25px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu div
+{
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu div:hover{
+  color: var(--primary);
+}
+.nav_sec .stellarnav > ul > li .dropdown .mob_lang_selector
+{
+  color: var(--primary);
+  margin-top: 20px;
+}
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu div {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu div:hover {
+  background: #f0f0f0;
+}
+
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu .active:hover,
+.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu .active {
+  background: var(--primary);
+  color: #fff !important;
+}
+/*  */
+.slider-radio-group {
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  display: inline-flex;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-radio-group .slider-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+}
+
+.slider-radio-group .btn-check:checked+.slider-btn {
+  background-color: #d50000;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.slider-radio-group .btn-check:checked+.slider-btn i {
+  color: white;
+}
+
+.slider-radio-group .slider-btn i {
+  margin-right: 5px;
+  color: #d50000;
+}
+
+.see-more-link {
+  font-size: 18px;
+  color: red;
+}
+
+.see-more-link:hover {
+  color: #c30010;
 }
 /*==== other dev =========*/
 
@@ -449,6 +549,9 @@ img {
 .blog_box_main {
   margin-bottom: 30px;
 }
+.blog_box_main a{
+  width: 100%;
+}
 .blog_box_h_inner {
   -webkit-box-shadow: 0 4px 14px 0 rgb(0 0 0 / 11%);
   box-shadow: 0 4px 14px 0 rgb(0 0 0 / 11%);
@@ -463,12 +566,14 @@ img {
 }
 .upcomimg_events_img_box img {
   width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
 .blog_img_box {
   padding: 0;
   height: auto;
   overflow: hidden;
-  display: inline-block;
+  /* display: inline-block; */
   position: relative;
 }
 .upcomimg_events_img_box {
@@ -1152,40 +1257,6 @@ img {
 {
   margin-right: 7px;
 }
-/*  */
-/* .upload-box {
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  padding: 30px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-.upload-box:hover {
-  border-color: #007bff;
-  background-color: #f8f9fa;
-}
-.upload-box i {
-  font-size: 40px;
-  color: #6c757d;
-}
-.upload-box p {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #6c757d;
-}
-.upload-box span {
-  color: red;
-  font-weight: bold;
-}
-input[type="file"] {
-  display: none;
-} */
-
-
-
-
-
 
 
 .upload__box {
@@ -1441,4 +1512,40 @@ input[type="file"] {
 {
   background-color: var(--primary_hover);
   color: #fff;
+}
+/* login page */
+.login_form_area {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 4px 14px 0 rgb(0 0 0 / 11%);
+  box-shadow: 0 4px 14px 0 rgb(0 0 0 / 11%);
+  padding: 15px;
+  border-radius: 10px;
+}
+.login_form_area .lgn_title
+{
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  margin: 0 0 5px 0;
+}
+.login_form_area p
+{
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+
+.field-icon {
+  position: absolute;
+  z-index: 2;
+  right: 3px;
+  top: 1px;
+  color: rgba(96, 94, 92, 1);
+  cursor: pointer;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }

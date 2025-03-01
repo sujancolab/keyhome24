@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
 <!-- hero_form_sec -->
-<section class="hero_form_sec text-center py-5-">
+<section class="comman_tb_padding">
     <div class="container">
         <div class="img_slider_area">
             <div class="owl_slider">

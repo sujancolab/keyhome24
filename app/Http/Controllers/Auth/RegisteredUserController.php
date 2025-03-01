@@ -18,9 +18,10 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): Response
+    public function create()//: Response
     {
-        return Inertia::render('Auth/Register');
+        return view('register');
+        //return Inertia::render('Auth/Register');
     }
 
     /**
@@ -30,10 +31,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required'],
         ]);
 
         $user = User::create([
@@ -41,11 +43,12 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        // dd($user);
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        return redirect('/dashboard');//redirect(route('dashboard', absolute: false));
     }
 }

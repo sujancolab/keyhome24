@@ -30,5 +30,37 @@
 <!-- <script src="js/video.popup.js"></script>  -->
 <script src="{{asset('assets/js/custom.js')}}"></script>
 @yield('scripts')
+
+<script>
+    $(document).ready(function () {
+      // Ensure French is active by default
+      $(".dropdown-menu div").removeClass("active");
+      $(".dropdown-menu div[data-lang='French']").addClass("active");
+
+      $(".lang_toggle").click(function () {
+          $(".dropdown-menu").toggle();
+      });
+
+      $(".dropdown-menu div").click(function () {
+          var lang = $(this).data("lang");
+
+          $(".selected-lang").text(lang);
+
+          // Remove active class from all items and add to the selected one
+          $(".dropdown-menu div").removeClass("active");
+          $(this).addClass("active");
+
+          $(".dropdown-menu").hide();
+      });
+
+      $(document).click(function (e) {
+          if (!$(e.target).closest(".dropdown").length) {
+              $(".dropdown-menu").hide();
+          }
+      });
+  });
+
+
+  </script>
 </body>
 </html>

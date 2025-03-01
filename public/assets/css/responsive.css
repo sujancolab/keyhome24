@@ -23,6 +23,21 @@
 @media (max-width: 992px){
 
 }
+@media (max-width: 767px){
+	.hide_mob{
+		display: none !important;
+	}
+	
+}
+@media (min-width: 767px){
+	.mobile_logo{
+		display: none;
+	}
+	.hide_desk{
+		display: none !important;
+	}
+	
+}
 
 
 
@@ -44,10 +59,8 @@
 	{
 		min-height: 210px;
 	}
-	.top_header_left ul li a,
-	.top_header_right ul li a
-	{
-		font-size: 16px;
+	.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle {
+		font-size: 14px;
 	}
 	
 	.bg_animation1 {
@@ -65,6 +78,7 @@
 	.container {
 		padding-left: 15px;
 		padding-right: 15px;
+		max-width: 100%;
 	}
 	.logo_area
 	{
@@ -73,13 +87,14 @@
 	}
 	.stellarnav.dark a
 	{
-		color: #000 !important;
+		color: #fff !important;
+		border-bottom: none !important;
 	}
 	/*.nav_sec .stellarnav > ul > li > a {
 		color: #fff !important;
 	}*/
 	.stellarnav.mobile.dark ul {
-		background: #e2e1e1;
+		background: #232323;
 	}
 	.nav_sec .stellarnav > ul > li > a:before
 	{
@@ -88,15 +103,19 @@
 	.stellarnav.dark a.dd-toggle .icon-plus:before,
 	.stellarnav.dark a.dd-toggle .icon-plus:after
 	{
-		border-color: #000;
+		border-color: #fff;
 	}
 	.stellarnav.dark .icon-close:before,
 	.stellarnav.dark .icon-close:after
 	{
-		border-color: #000;
+		border-color: #fff;
 	}
 	.stellarnav.dark .menu-toggle span.bars span {
 		background: #fff;
+	}
+	.stellarnav.mobile.right > ul
+	{
+		max-width: 100%;
 	}
 	.sm_res_mar_top_30
 	{
@@ -114,6 +133,47 @@
 	{
 		position: absolute !important;
 	}
+	.nav_sec .stellarnav > ul > li.header_lgn_btn a {
+		padding: 11px 15px;
+	}
+	#language_li{
+		border-bottom: 1px solid #4b4b4b;
+        margin-bottom: 17px;
+	}
+	.nav_sec .stellarnav > ul > li {
+		padding: 5px 10px;
+	}
+	.stellarnav .icon-close:after,
+	.stellarnav .icon-close:before
+	{
+		width: 16px;
+	}
+	.lang_toggle img {
+		filter: invert(49%) sepia(4%) saturate(1%) hue-rotate(173deg) brightness(88%) contrast(77%)
+	}
+	/* language mobile custamize */
+	.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu{
+		display: flex !important;
+		min-width: 100%;
+		position: relative;
+		top: 0;
+		justify-content: space-between;
+		background-color: transparent;
+	}
+	.nav_sec .stellarnav > ul > li .dropdown .dropdown-menu div{
+		border-radius: 4px;
+		color: #fff;
+		width: 100%;
+        justify-content: center;
+	}
+	.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle
+	{
+		color: #9ca3af;
+	}
+	.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle::after
+	{
+		display: none;
+	}
 /*=== Top Header ====*/
 	.nav_sec
 	{
@@ -125,7 +185,7 @@
 		display: block;
 	}
 	.logo_box img {
-		max-width: 164px;
+		max-width: 150px;
 	}
 	
 	.ads_vidget_box
@@ -185,7 +245,7 @@
 		padding: 5px;
 	}
 	.logo_box img {
-		max-width: 114px;
+		/* max-width: 114px; */
 	}
 	.wizard_header .nav.nav-pills:before
 	{

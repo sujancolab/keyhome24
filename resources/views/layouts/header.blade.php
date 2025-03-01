@@ -7,9 +7,69 @@
         <div class="nav_area">
           <div class="stellarnav">
             <ul>
-              <li class="active-"><a href="{{route('rent-buy')}}">Properties</a></li>
-              <li><a href="{{route('share-accommodation')}}">Requests</a></li>
-              <li><a href="">French</a></li>
+                <div class="mobile_logo"><a class="" href="index.html"><img src="assets/images/logo.png" alt="" /></a></div>
+                <li class="hide_desk mt-3" id="language_li">
+                  <div class="dropdown">
+                    <div class="dropdown-toggle lang_toggle">
+                        <img src="assets/images/globe_icon.svg" alt="globe icon">
+                        <span class="selected-lang">French</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div data-lang="French">
+                             French
+                        </div>
+                        <div data-lang="German">
+                          German
+                     </div>
+                        <div data-lang="Italian">
+                          Italian
+                        </div>
+
+                    </div>
+                </div>
+                </li>
+              <li class="active-"><a href="{{route('rent-buy')}}"><i class="fa fa-building-o" aria-hidden="true"></i> Properties</a></li>
+              <li><a href="{{route('share-accommodation')}}"><img src="assets/images/search_con_nav.svg" alt="">Requests</a></li>
+              <li class="hide_mob" id="language_li">
+                <div class="dropdown">
+                  <div class="dropdown-toggle lang_toggle">
+                      <img src="assets/images/globe_icon.svg" alt="globe icon">
+                      <span class="selected-lang">French</span>
+                  </div>
+                  <div class="dropdown-menu">
+                      <div data-lang="French">
+                           French
+                      </div>
+                      <div data-lang="German">
+                        German
+                   </div>
+                      <div data-lang="Italian">
+                        Italian
+                      </div>
+
+                  </div>
+              </div>
+              </li>
+              {{-- <li class="hide_mob" id="language_li">
+                <div class="dropdown">
+                  <div class="dropdown-toggle lang_toggle">
+                      <img src="assets/images/globe_icon.svg" alt="globe icon">
+                      <span class="selected-lang">French</span>
+                  </div>
+                  <div class="dropdown-menu">
+                      <div data-lang="French">
+                           French
+                      </div>
+                      <div data-lang="German">
+                        German
+                   </div>
+                      <div data-lang="Italian">
+                        Italian
+                      </div>
+
+                  </div>
+              </div>
+              </li> --}}
               @if(Auth::check())
               <li class="header_lgn_btn"><a href="{{route('dashboard')}}">
                 <span class=""><img src="{{asset('assets/images/user_icon.svg')}}" alt="" /></span>
