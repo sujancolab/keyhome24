@@ -47,7 +47,11 @@
               <a href="">
                 <div class="blog_box_h_inner">
                   <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="{{ asset('storage/' . $post->photos[0]) }}" alt=""> </div>
+                    <div class="upcomimg_events_img_box">
+                        @if(isset($post->photos) && count($post->photos))
+                        <img src="{{ asset('storage/' . $post->photos[0]) }}" alt="">
+                        @endif
+                    </div>
                     <div class="pro_price_over">
                       <h4>{{$post->price}} CHF</h4>
                       <p>Gross price</p>
@@ -66,7 +70,7 @@
               </a>
           </div>
           @endforeach
-          <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
+          {{-- <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
               <a href="">
                 <div class="blog_box_h_inner">
                   <div class="blog_img_box upcomimg_events_box_inner">
@@ -109,7 +113,7 @@
                   </div>
                 </div>
               </a>
-          </div>
+          </div> --}}
         </div>
 
       </div>

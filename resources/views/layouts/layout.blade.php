@@ -9,6 +9,8 @@
 <link href="{{asset('assets/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}" />
 <link href="{{asset('assets/css/stellarnav.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
@@ -22,6 +24,7 @@
 @include('layouts.footer')
 <!-- jQuery Area -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/owl.carousel.js')}}"></script>
 <script src="{{asset('assets/js/owl.carousel.js')}}"></script>
 <script src="{{asset('assets/js/stellarnav.js')}}"></script>
 <!-- <script src="js/video.popup.js"></script>  -->

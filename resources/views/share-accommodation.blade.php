@@ -151,54 +151,26 @@
       </div>
       <!--  -->
       <div class="latest_new_area comman_top">
+        @foreach ($requests as $request)
         <div class="full_property_listing_repeat">
-          <h3>Request for shared accommodation - University district <span class="pro_status_btn">Active</span></h3>
-          <ul class="list_full_property list-inline">
-            <li>Crake</li>
-            <li>Geneva</li>
-            <li>900 CHF/month</li>
-            <li>Shared accommodation</li>
-            <li>From 01.08.2024</li>
-          </ul>
-          <p class="ft_weight">Medical student looking for a room in a nice shared apartment close to the university. Friendly atmosphere desired.</p>
-          <div class="list_call_action">
-            <a class="btn_list_action btn_to_call" href="tel:+91098765432">To Call</a>
-            <a class="btn_list_action btn_to_mail" href="tel:+91098765432">E-mail</a>
-            <a class="btn_list_action btn_to_share" href="tel:+91098765432">Share</a>
+            <h3>Request for shared accommodation - {{$request->search_type}} <span class="pro_status_btn">Active</span></h3>
+            <ul class="list_full_property list-inline">
+              <li>Crake</li>
+              <li>Geneva</li>
+              <li> {{$request->max_budget}} CHF/month</li>
+              <li>Shared accommodation</li>
+              <li>From {{$request->created_at}}</li>
+            </ul>
+            <p class="ft_weight">{{$request->search}}</p>
+            <div class="list_call_action">
+              <a class="btn_list_action btn_to_call" href="tel:{{$request->phone}}">To Call</a>
+              <a class="btn_list_action btn_to_mail" href="mailto:{{$request->email}}">E-mail</a>
+              <a class="btn_list_action btn_to_share" href="tel:{{$request->phone}}">Share</a>
+            </div>
           </div>
-        </div>
-        <div class="full_property_listing_repeat">
-          <h3>Request for shared accommodation - University district <span class="pro_status_btn">Active</span></h3>
-          <ul class="list_full_property list-inline">
-            <li>Crake</li>
-            <li>Geneva</li>
-            <li>900 CHF/month</li>
-            <li>Shared accommodation</li>
-            <li>From 01.08.2024</li>
-          </ul>
-          <p class="ft_weight">Medical student looking for a room in a nice shared apartment close to the university. Friendly atmosphere desired.</p>
-          <div class="list_call_action">
-            <a class="btn_list_action btn_to_call" href="tel:+91098765432">To Call</a>
-            <a class="btn_list_action btn_to_mail" href="tel:+91098765432">E-mail</a>
-            <a class="btn_list_action btn_to_share" href="tel:+91098765432">Share</a>
-          </div>
-        </div>
-        <div class="full_property_listing_repeat">
-          <h3>Request for shared accommodation - University district <span class="pro_status_btn">Active</span></h3>
-          <ul class="list_full_property list-inline">
-            <li>Crake</li>
-            <li>Geneva</li>
-            <li>900 CHF/month</li>
-            <li>Shared accommodation</li>
-            <li>From 01.08.2024</li>
-          </ul>
-          <p class="ft_weight">Medical student looking for a room in a nice shared apartment close to the university. Friendly atmosphere desired.</p>
-          <div class="list_call_action">
-            <a class="btn_list_action btn_to_call" href="tel:+91098765432">To Call</a>
-            <a class="btn_list_action btn_to_mail" href="tel:+91098765432">E-mail</a>
-            <a class="btn_list_action btn_to_share" href="tel:+91098765432">Share</a>
-          </div>
-        </div>
+        @endforeach
+
+
       </div>
     </div>
   </section>

@@ -52,12 +52,12 @@
                                     <div class="card-body">
                                         <h5><strong>Post request</strong></h5>
                                         <p>Create a request to find your ideal property</p>
-                                        <a class="btn btn_light" href=""><img class="me-1"
-                                                src="images/search_icon_blue.svg" alt="" />
+                                        <a class="btn btn_light" href="{{route('add-request')}}"><img class="me-1"
+                                                src="assets/images/search_icon_blue.svg" alt="" />
                                             Post a request</a>
                                     </div>
                                     <div class="ps-2">
-                                        <img src="images/search_icon_white.svg" alt="" />
+                                        <img src="assets/images/search_icon_white.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,10 @@
                         <div class="ads_vidget_box d-flex justify-content-between align-items-center pb-2 mb-2">
                             <div class="d-flex">
                                 <div class="property_thumb_img me-3">
-                                    <img src="{{ asset('storage/' . $post->photos[0]) }}" alt="" />
+                                    @if(isset($post->photos) && count($post->photos))
+                                    <img src="{{ asset('storage/' . $post->photos[0]) }}" alt="">
+                                    @endif
+
                                 </div>
                                 <div>
                                     <h5>{{ $post->agency_name }}</h5>
@@ -88,7 +91,7 @@
                                 </div>
                             </div>
                             <div class="ads_vidget_trash">
-                                <span class="icon-trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                <a href="{{url('/post-delete/'.$post->id)}}"><span class="icon-trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span></a>
                             </div>
                         </div>
                         @endforeach
@@ -140,22 +143,26 @@
                         <h5 class="mb-3 title_5">My requests</h5>
 
                         <!-- Request Item -->
+                        @foreach ($requests as $request)
+
+
                         <div class="ads_vidget_box d-flex justify-content-between align-items-center pb-2 mb-2">
                             <div class="d-flex">
                                 <div>
-                                    <h5>New 4.5 room apartment</h5>
-                                    <p class="text-muted mb-2">Lausanne, Vaud</p>
+                                    <h5>{{$request->search}}</h5>
+                                    <p class="text-muted mb-2">{{$request->npa}}, {{$request->city}}</p>
                                     <div class="d-flex align-items-center">
-                                        <p class="m-0 me-3">2500 CHF/month</p>
+                                        <p class="m-0 me-3">{{$request->max_budget}} CHF/month</p>
                                         <span class="pro_status_btn">Active</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="ads_vidget_trash">
-                                <span class="icon-trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                                <a href="{{url('/request-delete/'.$request->id)}}"><span class="icon-trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span></a>
                             </div>
                         </div>
-                        <div class="ads_vidget_box expired_property d-flex justify-content-between align-items-center pb-2 mb-2"
+                        @endforeach
+                        {{-- <div class="ads_vidget_box expired_property d-flex justify-content-between align-items-center pb-2 mb-2"
                             data-bs-toggle="modal" data-bs-target=".subscription_exp_modal">
                             <div class="d-flex">
                                 <div>
@@ -172,7 +179,7 @@
                                 <a class="border_btn me-2" href="">Renew Advert</a>
                                 <span class="icon-trash"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

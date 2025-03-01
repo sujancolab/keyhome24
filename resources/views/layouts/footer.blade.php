@@ -9,7 +9,7 @@
 
             <div class="ft_contact">
               <div class="ft_logo mb-3">
-                <img class="ft_logo_img" src="images/footer_logo.png" alt="" />
+                <img class="ft_logo_img" src="assets/images/footer_logo.png" alt="" />
               </div>
               <p>Votre partenaire de confiance pour trouver le bien immobilier de vos rêves.</p>
               <div class="footer_social">
@@ -17,27 +17,27 @@
                 <ul>
                   <li>
                       <a target="_blank" href="">
-                        <img src="images/soc_linkdin.svg" alt="" />
+                        <img src="assets/images/soc_linkdin.svg" alt="" />
                       </a>
                     </li>
                   <li>
                       <a target="_blank" href="">
-                        <img src="images/soc_fb.svg" alt="" />
+                        <img src="assets/images/soc_fb.svg" alt="" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="">
-                        <img src="images/soc_insta.svg" alt="" />
+                        <img src="assets/images/soc_insta.svg" alt="" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="">
-                        <img src="images/soc_yt.svg" alt="" />
+                        <img src="assets/images/soc_yt.svg" alt="" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="">
-                        <img src="images/soc_tiktok.svg" alt="" />
+                        <img src="assets/images/soc_tiktok.svg" alt="" />
                       </a>
                     </li>
 

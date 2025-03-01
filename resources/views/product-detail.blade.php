@@ -3,7 +3,107 @@
 <!-- hero_form_sec -->
 <section class="hero_form_sec text-center py-5-">
     <div class="container">
-      <h1 class="main_form_title text-white">Rent a Property</h1>
+        <div class="img_slider_area">
+            <div class="owl_slider">
+                <div class="owl-carousel owl-theme preview_image" id="features_img_slider">
+                    <div class="item">
+                        <div class="owl_img">
+                            <img class="preview_image" src="images/properties1.jpg" alt="" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider_name d-flex">
+                <div class="slider_name_left">
+                    <h3>Restaurant 0 rooms, 4000 m²</h3>
+                    <p>
+                        <img src="images/location_icon.svg" alt="" />
+                        jhsgdgasd , 8888 dsf
+                    </p>
+                </div>
+                <div class="slider_name_right">
+                    <h4>88866 CHF</h4>
+                    <p>Gross price</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form_vidget">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="feature_summry_bx">
+                        <img src="images/feature_surface.svg" alt="" />
+                        <h4>4000 m²</h4>
+                        <p class="mb-0">Surface</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature_summry_bx">
+                        <img src="images/feature_building.svg" alt="" />
+                        <h4>0</h4>
+                        <p class="mb-0">Floor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form_vidget">
+            <h4 class="tab_title mb-4">Description</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="post_description">
+                        Lorem Ipsum is simply dummy text of the printing
+                        and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="form_vidget">
+            <h4 class="tab_title mb-4">Equipment</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list_style_feat">
+                        <li>Elevator</li>
+                        <li>Elevator</li>
+                        <li>Elevator</li>
+                        <li>Elevator Elevator</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="form_vidget">
+            <h4 class="tab_title mb-4">Documents available</h4>
+            <div class="row">
+                <div class="col-md-12 preview_documents">
+                    {{-- <p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
+                        test-pdf-name.pdf
+                    </p>
+                    <p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
+                        test-pdf-name.pdf
+                    </p> --}}
+                </div>
+            </div>
+        </div>
+        <div class="form_vidget">
+            <p class="mb-0">
+                <img src="images/date_icon.svg" class="me-1" alt="" />
+                Available from 02/22/2025
+            </p>
+        </div>
+
+        <div class="form_vidget">
+            <h4 class="tab_title mb-4">Real estate agency</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>56547577575</p>
+                    <p>jkhjdhsa.c clacsdcs@hhh</p>
+                    <p>56547577575</p>
+                    <p>jkhjdhsa.ccsdcs@hhh</p>
+                </div>
+            </div>
+        </div>
+      {{-- <h1 class="main_form_title text-white">Rent a Property</h1>
       <div class="hero_form_area">
         <div class="home_page_tab_area_only home_page_form_nav">
             <ul class="" role="tablist">
@@ -151,11 +251,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </section>
   <!--  -->
-  <section class="properties_sec comman_tb_padding">
+  {{-- <section class="properties_sec comman_tb_padding">
     <div class="container">
       <div class="property_result_title two_column_title">
         <h2 class="mb-0">7 Properties for sale</h2>
@@ -174,7 +274,7 @@
 
 
           <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="{{url('/detail')}}">
+              <a href="">
                 <div class="blog_box_h_inner">
                   <div class="blog_img_box upcomimg_events_box_inner">
                     <div class="upcomimg_events_img_box"> <img src="{{ asset('storage/' . $post->photos[0]) }}" alt=""> </div>
@@ -196,76 +296,11 @@
               </a>
           </div>
           @endforeach
-          {{-- <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
-                <div class="blog_box_h_inner">
-                  <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="assets/images/properties1.jpg" alt=""> </div>
-                    <div class="pro_price_over">
-                      <h4>950,000 CHF</h4>
-                      <p>Gross price</p>
-                    </div>
-                  </div>
-                  <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>1007 Lausanne, Avenue de Cour 25</h5>
-                    <h3 class="blog_h_head">Apartment, 4.5 rooms, 120 m²</h3>
-                    <ul class="list_amenties">
-                      <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
-                    </ul>
-                  </div>
-                </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
-                <div class="blog_box_h_inner">
-                  <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="assets/images/properties1.jpg" alt=""> </div>
-                    <div class="pro_price_over">
-                      <h4>950,000 CHF</h4>
-                      <p>Gross price</p>
-                    </div>
-                  </div>
-                  <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>1007 Lausanne, Avenue de Cour 25</h5>
-                    <h3 class="blog_h_head">Apartment, 4.5 rooms, 120 m²</h3>
-                    <ul class="list_amenties">
-                      <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
-                    </ul>
-                  </div>
-                </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
-                <div class="blog_box_h_inner">
-                  <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="assets/images/properties1.jpg" alt=""> </div>
-                    <div class="pro_price_over">
-                      <h4>950,000 CHF</h4>
-                      <p>Gross price</p>
-                    </div>
-                  </div>
-                  <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>1007 Lausanne, Avenue de Cour 25</h5>
-                    <h3 class="blog_h_head">Apartment, 4.5 rooms, 120 m²</h3>
-                    <ul class="list_amenties">
-                      <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
-                    </ul>
-                  </div>
-                </div>
-              </a>
-          </div> --}}
+
         </div>
 
       </div>
     </div>
-  </section>
+  </section> --}}
   <!-- banner  -->
 @endsection
