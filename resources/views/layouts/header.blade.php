@@ -15,13 +15,13 @@
                         <span class="selected-lang">French</span>
                     </div>
                     <div class="dropdown-menu">
-                        <div data-lang="French">
+                        <div data-lang="French" onclick="openTranslatePopup('fr')">
                              French
                         </div>
-                        <div data-lang="German">
+                        <div data-lang="German" onclick="openTranslatePopup('fr')">
                           German
                      </div>
-                        <div data-lang="Italian">
+                        <div data-lang="Italian" onclick="openTranslatePopup('fr')">
                           Italian
                         </div>
 
@@ -37,13 +37,13 @@
                       <span class="selected-lang">French</span>
                   </div>
                   <div class="dropdown-menu">
-                      <div data-lang="French">
+                      <div data-lang="French" onclick="changeLanguage('fr')">
                            French
                       </div>
-                      <div data-lang="German">
+                      <div data-lang="German" onclick="changeLanguage('fr')">
                         German
                    </div>
-                      <div data-lang="Italian">
+                      <div data-lang="Italian" onclick="changeLanguage('fr')">
                         Italian
                       </div>
 

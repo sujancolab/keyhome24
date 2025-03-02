@@ -14,11 +14,55 @@
 <link href="{{asset('assets/css/stellarnav.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
+<style>
+    /* Add your custom styles here */
+    .translate-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.translate-modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    margin: 15% auto;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+</style>
 </head>
 <body>
+
 @include('layouts.header')
 @yield('content')
 
+<!-- Custom Modal for Google Translate -->
+<div id="translateModal" class="translate-modal">
+    <div class="translate-modal-content">
+        <span class="close-btn" onclick="closeTranslatePopup()">&times;</span>
+        <h3>Select Language</h3>
+        <div id="google_translate_element_popup"></div>
+    </div>
+</div>
 
 
 @include('layouts.footer')
@@ -62,5 +106,45 @@
 
 
   </script>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'fr,de,it',
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, // Keep it simple
+            autoDisplay: false // Prevent auto display
+        }, 'google_translate_element');
+
+    }
+    function openTranslatePopup() {
+    document.getElementById("translateModal").style.display = "block";
+
+    setTimeout(() => {
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            document.getElementById("google_translate_element_popup").appendChild(selectField);
+        }
+    }, 500);
+}
+
+function closeTranslatePopup() {
+    document.getElementById("translateModal").style.display = "none";
+}
+function changeLanguage(lang) {
+    var selectField = document.querySelector(".goog-te-combo");
+    if (selectField) {
+        selectField.value = lang; // Set the selected language
+        selectField.dispatchEvent(new Event("change")); // Trigger change event
+    } else {
+        console.error("Google Translate dropdown not found.");
+    }
+}
+
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>

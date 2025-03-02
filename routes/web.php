@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AuthCheck;
@@ -35,5 +36,7 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/save-post', [IndexController::class, 'savePost'])->name('savePost');
 Route::post('/save-request', [IndexController::class, 'saveRequest'])->name('saveRequest');
+Route::post('/send-otp', [PasswordResetLinkController::class, 'sendOtp'])->name('password.email');
+Route::post('/verify-otp', [PasswordResetLinkController::class, 'verifyOtp'])->name('password.reset');
 
 require __DIR__.'/auth.php';

@@ -10,21 +10,21 @@
         <div class="mb-3 mt-3">
             <label for="email">Name:</label>
             <div class="inp_relative">
-                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
                 <div class="inp_icon"><img src="assets/images/profile_icon.svg" alt="i"></div>
             </div>
         </div>
           <div class="mb-3 mt-3">
               <label for="email">Email:</label>
               <div class="inp_relative">
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                   <div class="inp_icon"><img src="assets/images/mail_icon.svg" alt="i"></div>
               </div>
           </div>
           <div class="mb-3">
               <label for="pwd">Password:</label>
               <div class="inp_relative">
-                  <input type="password" class="form-control" id="password-field" placeholder="Enter password"
+                  <input type="password" class="form-control" id="password-field" placeholder="Enter password" required
                       name="password">
                   <div class="inp_icon"><img src="assets/images/lock_icon.svg" alt="i"></div>
                   <span toggle="#password-field" class="field-icon toggle-password">Display</span>
@@ -33,7 +33,7 @@
           <div class="mb-3">
             <label for="pwd">Confirm Password:</label>
             <div class="inp_relative">
-                <input type="password" class="form-control" id="confirm-password-field" placeholder="Enter password"
+                <input type="password" class="form-control" id="confirm-password-field" placeholder="Enter password" required
                     name="confirm_password">
                 <div class="inp_icon"><img src="assets/images/lock_icon.svg" alt="i"></div>
                 <span toggle="#password-field" class="field-icon toggle-password">Display</span>
@@ -41,8 +41,16 @@
         </div>
 
           <div class="form-check mb-3 text-end">
-              <a href="" class="forgot_link">Forgot Password?</a>
+              <a href="{{url('/forgot-password')}}" class="forgot_link">Forgot Password?</a>
           </div>
+          <div class="mb-3">
+
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                I accept the <a href="{{ url('/terms-and-conditions') }}" target="_blank">terms and conditions</a> of use and
+                the <a href="{{ url('/privacy-policy') }}" target="_blank">privacy policy</a> of Keyhome24.
+            </label>
+        </div>
           <div class="mb-3">
               <button type="submit" class="btn btn_comman w-100">Signup</button>
           </div>
