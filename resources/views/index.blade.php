@@ -10,7 +10,7 @@
               <li>
                 <a class="active" href="{{route('rent-buy')}}">
                   <img src="{{asset('assets/assets/images/key_icon.svg')}}" alt="" />
-                To rent out
+                Rent Out
                 </a>
             </li>
             <li>
@@ -22,7 +22,7 @@
             <li>
                 <a class="" href="{{route('share-accommodation')}}">
                   <img src="{{asset('assets/assets/images/user_multiple.svg')}}" alt="" />
-                Shared accommodation
+                  Requests
                 </a>
             </li>
             </ul>

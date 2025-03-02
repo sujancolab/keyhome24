@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(6);
         return view('index')->with(compact('posts'));
         // return Inertia::render('Welcome', [
         //     'posts' => $posts
@@ -22,7 +22,7 @@ class IndexController extends Controller
     //
     public function rentBuy()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(6);
         return view('rent-buy')->with(compact('posts'));
         // return Inertia::render('RentBuy', [
         //     'posts' => $posts
@@ -30,7 +30,7 @@ class IndexController extends Controller
     }
     public function shareAccomodation()
     {
-        $requests = RequestModel::paginate(5);
+        $requests = RequestModel::paginate(6);
         return view('share-accommodation')->with(compact('requests'));
         // return Inertia::render('ShareAccomodation');
     }
@@ -62,7 +62,7 @@ class IndexController extends Controller
                 'location' => 'required|string|max:255',
                 'ad_type' => 'required|string',
                 'category' => 'required|string',
-                'property_type' => 'required|string',
+                // 'property_type' => 'required|string',
                 'price' => 'required|numeric',
                 'address_property' => 'required|string|max:255',
                 'postal_code' => 'required|string|max:10',
@@ -75,7 +75,7 @@ class IndexController extends Controller
                 'features' => 'nullable|array',
                 'description' => 'required|string',
                 'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
-                'documents.*' => 'nullable|mimes:pdf|max:10240',
+                // 'documents.*' => 'nullable|mimes:pdf|max:10240',
                 'publication_duration' => 'required|string',
                 'payment_method' => 'required|string',
             ]);
