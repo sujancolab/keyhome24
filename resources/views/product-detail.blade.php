@@ -1,29 +1,34 @@
 @extends('layouts.layout')
 @section('content')
 <!-- hero_form_sec -->
+{{-- {{$post}} --}}
 <section class="comman_tb_padding">
     <div class="container">
         <div class="img_slider_area">
             <div class="owl_slider">
                 <div class="owl-carousel owl-theme preview_image" id="features_img_slider">
+                    @foreach ($post->photos as $photo)
+
+
                     <div class="item">
                         <div class="owl_img">
-                            <img class="preview_image" src="images/properties1.jpg" alt="" />
+                            <img class="preview_image" src="{{url('storage/'.$photo)}}" alt="" />
                         </div>
                     </div>
+                    @endforeach
 
                 </div>
             </div>
             <div class="slider_name d-flex">
                 <div class="slider_name_left">
-                    <h3>Restaurant 0 rooms, 4000 m²</h3>
+                    <h3>{{$post->property_type}} {{$post->rooms}} rooms, {{$post->surface_area}} m²</h3>
                     <p>
                         <img src="images/location_icon.svg" alt="" />
-                        jhsgdgasd , 8888 dsf
+                        {{$post->address}} , {{$post->location}}
                     </p>
                 </div>
                 <div class="slider_name_right">
-                    <h4>88866 CHF</h4>
+                    <h4>{{$post->price}} CHF</h4>
                     <p>Gross price</p>
                 </div>
             </div>
@@ -34,14 +39,14 @@
                 <div class="col-md-3">
                     <div class="feature_summry_bx">
                         <img src="images/feature_surface.svg" alt="" />
-                        <h4>4000 m²</h4>
+                        <h4>{{$post->surface_area}} m²</h4>
                         <p class="mb-0">Surface</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="feature_summry_bx">
                         <img src="images/feature_building.svg" alt="" />
-                        <h4>0</h4>
+                        <h4>{{$post->floor}}</h4>
                         <p class="mb-0">Floor</p>
                     </div>
                 </div>
@@ -52,9 +57,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="post_description">
-                        Lorem Ipsum is simply dummy text of the printing
-                        and typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500
+                        {{$post->description}}
                     </p>
                 </div>
             </div>
@@ -64,27 +67,26 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="list_style_feat">
+                        @foreach ($post->features as $feature)
+                        <li>{{$feature}}</li>
+
+                        @endforeach
+                        {{-- <li>Elevator</li>
                         <li>Elevator</li>
                         <li>Elevator</li>
-                        <li>Elevator</li>
-                        <li>Elevator Elevator</li>
+                        <li>Elevator Elevator</li> --}}
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="form_vidget">
+        {{-- <div class="form_vidget">
             <h4 class="tab_title mb-4">Documents available</h4>
             <div class="row">
                 <div class="col-md-12 preview_documents">
-                    {{-- <p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
-                        test-pdf-name.pdf
-                    </p>
-                    <p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
-                        test-pdf-name.pdf
-                    </p> --}}
+
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="form_vidget">
             <p class="mb-0">
                 <img src="images/date_icon.svg" class="me-1" alt="" />

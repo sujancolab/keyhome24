@@ -44,7 +44,7 @@
 
 
           <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
+              <a href="{{url('/detail/'.$post->id)}}">
                 <div class="blog_box_h_inner">
                   <div class="blog_img_box upcomimg_events_box_inner">
                     <div class="upcomimg_events_img_box">
@@ -70,6 +70,10 @@
               </a>
           </div>
           @endforeach
+          <!-- Pagination Links -->
+<div class="d-flex justify-content-center">
+    {{ $posts->links() }}
+</div>
           {{-- <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
               <a href="">
                 <div class="blog_box_h_inner">

@@ -669,6 +669,8 @@ img {
 .right_arrow_more {
   color: var(--primary);
   font-weight: 500;
+  width: 141px;
+  text-align: right;
 }
 .property_result_title {
   background-color: #fff;
@@ -680,6 +682,11 @@ img {
   font-weight: 600;
   color: var(--secondary);
 }
+.property_result_title .property_select .custom-select
+	{
+    background: #f3f4f6;
+    border-color: transparent;
+	}
 /*=== full property listing ===*/
 .full_property_listing_repeat {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);

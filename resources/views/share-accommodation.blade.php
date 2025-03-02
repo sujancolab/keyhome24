@@ -140,7 +140,7 @@
   <section class="properties_sec comman_tb_padding">
     <div class="container">
       <div class="property_result_title two_column_title">
-        <h2 class="mb-0">5 Research requests</h2>
+        <h2 class="mb-0">{{$requests->total()}} Research requests</h2>
         <div class="">
           <select class="custom-select form-control">
             <option value="">Most Recent</option>
@@ -170,7 +170,9 @@
           </div>
         @endforeach
 
-
+        <div class="d-flex justify-content-center">
+            {{ $requests->links() }}
+        </div>
       </div>
     </div>
   </section>

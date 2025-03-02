@@ -10,7 +10,10 @@ use Inertia\Inertia;
 Route::get('/',[IndexController::class,'index'])->name('home');
 Route::get('/rent-buy',[IndexController::class,'rentBuy'])->name('rent-buy');
 Route::get('/share-accommodation',[IndexController::class,'shareAccomodation'])->name('share-accommodation');
-Route::get('/detail',[IndexController::class,'detailView'])->name('detail');
+Route::get('/detail/{id}',[IndexController::class,'detailView'])->name('detail');
+Route::get('/general-conditions',[IndexController::class,'generalConditions']);
+Route::get('/privacy',[IndexController::class,'privacy']);
+Route::get('/legal',[IndexController::class,'legal']);
 Route::middleware([AuthCheck::class])->group(function(){
 
 

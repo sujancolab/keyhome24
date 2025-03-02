@@ -20,7 +20,7 @@
             <div id="tab_buy" class="container tab-pane active"><br>
               <form class="comman_form">
                 <div class="row">
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <input type="text" class="form-control" placeholder="City or postal code" />
                       <div class="inp_icon">
@@ -28,7 +28,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option  selected>Type of property</option>
@@ -43,7 +43,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option disabled selected>Max budget.</option>
@@ -58,7 +58,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option value="">Pièces</option>
@@ -80,7 +80,7 @@
             <div id="tab_rent" class="container tab-pane fade"><br>
               <form class="comman_form">
                 <div class="row">
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <input type="text" class="form-control" placeholder="City or postal code" />
                       <div class="inp_icon">
@@ -88,7 +88,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option disabled selected>Type of property</option>
@@ -115,7 +115,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option disabled selected>Max budget.</option>
@@ -130,7 +130,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-3 mb-2 form-group">
+                  <div class="col-lg-3 col-sm-6 mb-2 form-group">
                     <div class="inp_relative">
                       <select class="custom-select form-control">
                         <option value="">Pièces</option>
@@ -158,8 +158,8 @@
   <section class="properties_sec comman_tb_padding">
     <div class="container">
       <div class="property_result_title two_column_title">
-        <h2 class="mb-0">7 Properties for sale</h2>
-        <div class="">
+        <h2 class="mb-0">{{$posts->total()}} Properties for sale</h2>
+        <div class="property_select">
           <select class="custom-select form-control">
             <option value="">Most Recent</option>
             <option value="">Ascending price</option>
@@ -174,7 +174,7 @@
 
 
           <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="{{url('/detail')}}">
+              <a href="{{url('/detail/'.$post->id)}}">
                 <div class="blog_box_h_inner">
                   <div class="blog_img_box upcomimg_events_box_inner">
                     <div class="upcomimg_events_img_box"> <img src="{{ asset('storage/' . $post->photos[0]) }}" alt=""> </div>
@@ -196,6 +196,9 @@
               </a>
           </div>
           @endforeach
+          <div class="d-flex justify-content-center">
+            {{ $posts->links() }}
+        </div>
           {{-- <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
               <a href="">
                 <div class="blog_box_h_inner">

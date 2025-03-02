@@ -60,9 +60,9 @@
             <h2 class="ft_heading">Liens Rapides</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="">Rechercher</a></li>
-                <li><a href="">Demandes</a></li>
-                <li><a href="">Espace utilisateur</a></li>
+                <li><a href="{{route('rent-buy')}}">Rechercher</a></li>
+                <li><a href="{{route('share-accommodation')}}">Demandes</a></li>
+                <li><a href="{{url('/')}}">Espace utilisateur</a></li>
               </ul>
             </div>
           </div>
@@ -72,9 +72,9 @@
             <h2 class="ft_heading">Liens légaux</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="">Conditions générales</a></li>
-                <li><a href="">Data Protection</a></li>
-                <li><a href="">Legal Notices</a></li>
+                <li><a href="{{url('/general-conditions')}}">Conditions générales</a></li>
+                <li><a href="{{url('/privacy')}}">Data Protection</a></li>
+                <li><a href="{{url('/legal')}}">Legal Notices</a></li>
               </ul>
             </div>
           </div>

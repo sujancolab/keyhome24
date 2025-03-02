@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         return view('index')->with(compact('posts'));
         // return Inertia::render('Welcome', [
         //     'posts' => $posts
@@ -22,7 +22,7 @@ class IndexController extends Controller
     //
     public function rentBuy()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         return view('rent-buy')->with(compact('posts'));
         // return Inertia::render('RentBuy', [
         //     'posts' => $posts
@@ -30,14 +30,15 @@ class IndexController extends Controller
     }
     public function shareAccomodation()
     {
-        $requests = RequestModel::all();
+        $requests = RequestModel::paginate(5);
         return view('share-accommodation')->with(compact('requests'));
         // return Inertia::render('ShareAccomodation');
     }
-    public function detailView()
+    public function detailView($id)
     {
+        $post =Post::where('id',$id)->first();
         // return Inertia::render('ProductDetail');
-        return view('product-detail');
+        return view('product-detail')->with(compact('post'));
     }
     public function addPost()
     {
@@ -163,5 +164,15 @@ class IndexController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+    public function generalConditions(){
+        return view('general-conditions');
+        // return Inertia::render('GeneralConditions');
+    }
+    public function privacy(){
+        return view('privacy');
+    }
+    public function legal(){
+        return view('legal');
     }
 }
