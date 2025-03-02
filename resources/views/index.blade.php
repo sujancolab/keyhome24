@@ -9,19 +9,19 @@
             <ul class="d-inline-flex-">
               <li>
                 <a class="active" href="{{route('rent-buy')}}">
-                  <img src="{{asset('assets/assets/images/key_icon.svg')}}" alt="" />
-                Rent Out
+                  <img src="{{ asset('assets/images/key_icon.svg') }}" alt="" />
+                  Rent
                 </a>
             </li>
             <li>
                 <a class="" href="{{route('rent-buy')}}">
-                  <img src="{{asset('assets/assets/images/home_icon.svg')}}" alt="" />
+                  <img src="{{ asset('assets/images/home_icon.svg') }}" alt="" />
                 Buy
                 </a>
             </li>
             <li>
                 <a class="" href="{{route('share-accommodation')}}">
-                  <img src="{{asset('assets/assets/images/user_multiple.svg')}}" alt="" />
+                  <img src="{{ asset('assets/images/user_multiple.svg') }}" alt="" />
                   Requests
                 </a>
             </li>

@@ -69,7 +69,6 @@
 <!-- jQuery Area -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/owl.carousel.js')}}"></script>
-<script src="{{asset('assets/js/owl.carousel.js')}}"></script>
 <script src="{{asset('assets/js/stellarnav.js')}}"></script>
 <!-- <script src="js/video.popup.js"></script>  -->
 <script src="{{asset('assets/js/custom.js')}}"></script>

@@ -30,24 +30,24 @@
                 <div class="col-md-9">
                     <!-- Action Buttons -->
                     <div class="row mb-3">
-                        <div class="col-md-6">
-                            <div class="post_ad_box post_ad_only text-white">
+                        <div class="col-md-6 d-flex">
+                            <div class="post_ad_box post_ad_only text-white w-100">
                                 <div class="d-flex align-items-center">
                                     <div class="card-body">
                                         <h5><strong>Post an ad</strong></h5>
                                         <p>Create an attractive ad for your property</p>
                                         <a class="btn btn_light" href="{{ route('add-post') }}"><img class="me-1"
-                                                src="images/upload_icon_red.svg" alt="" />
+                                                src="assets/images/upload_icon_red.svg" alt="" />
                                             Add an ad</a>
                                     </div>
                                     <div class="ps-2">
-                                        <img src="images/upload_icon.svg" alt="" />
+                                        <img src="assets/images/upload_icon.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="post_ad_box post_request_only text-white">
+                        <div class="col-md-6 d-flex">
+                            <div class="post_ad_box post_request_only text-white w-100">
                                 <div class="d-flex align-items-center">
                                     <div class="card-body">
                                         <h5><strong>Post request</strong></h5>

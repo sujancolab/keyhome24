@@ -17,27 +17,27 @@
                 <ul>
                   <li>
                       <a target="_blank" href="https://www.linkedin.com/company/keyhome24-com/">
-                        <img src="assets/images/soc_linkdin.svg" alt="" />
+                        <img src="{{ asset('assets/images/soc_linkdin.svg') }}" alt="soc_linkdin Icon" />
                       </a>
                     </li>
                   <li>
                       <a target="_blank" href="https://www.facebook.com/people/KeyHome24-Schweiz/61565481790114/">
-                        <img src="assets/images/soc_fb.svg" alt="" />
+                        <img src="{{ asset('assets/images/soc_fb.svg') }}" alt="Facebook Icon" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.instagram.com/keyhome24com/">
-                        <img src="assets/images/soc_insta.svg" alt="" />
+                        <img src="{{ asset('assets/images/soc_insta.svg') }}" alt="soc_insta Icon" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://m.youtube.com/@KeyHome24">
-                        <img src="assets/images/soc_yt.svg" alt="" />
+                        <img src="{{ asset('assets/images/soc_yt.svg') }}" alt="soc_yt Icon" />
                       </a>
                     </li>
                     <li>
                       <a target="_blank" href="https://www.tiktok.com/@keyhome24?_t=ZN8svs8ze7MwA&_r=1">
-                        <img src="assets/images/soc_tiktok.svg" alt="" />
+                        <img src="{{ asset('assets/images/soc_tiktok.svg') }}" alt="soc_tiktok Icon" />
                       </a>
                     </li>
 

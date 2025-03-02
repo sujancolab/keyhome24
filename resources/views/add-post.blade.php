@@ -159,7 +159,7 @@
                                                 <div class="col-lg-12 mb-3 form-group">
                                                     <label class="form-label">Price (CHF) <span
                                                             class="mandatory">*</span></label>
-                                                    <input type="number" class="form-control" name="price"
+                                                    <input type="text" class="form-control" name="price"
                                                         placeholder="0" required />
                                                 </div>
                                             </div>
