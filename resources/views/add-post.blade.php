@@ -144,11 +144,25 @@
                                                             class="mandatory">*</span></label>
                                                     <select class="form-control custom-select" name="property_type">
                                                         <option value="">Select a type</option>
-                                                        <option value="apartment">Apartment</option>
-                                                        <option value="home">Home</option>
-                                                        <option value="vila">Vila</option>
-                                                        <option value="studio">Studio</option>
-                                                        <option value="loft">Loft</option>
+                                                        <optgroup label="Residential">
+                                                            <option value="apartment">Apartment</option>
+                                                            <option value="house">House</option>
+                                                            <option value="villa">Villa</option>
+                                                            <option value="studio">Studio</option>
+                                                            <option value="loft">Loft</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Commercial">
+                                                            <option value="office">Office</option>
+                                                            <option value="shop">Shop</option>
+                                                            <option value="restaurant">Restaurant</option>
+                                                            <option value="warehouse">Warehouse</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Land">
+                                                            <option value="building_land">Building Plot</option>
+                                                            <option value="agricultural_land">Agricultural Land</option>
+                                                        </optgroup>
                                                     </select>
                                                 </div>
                                             </div>

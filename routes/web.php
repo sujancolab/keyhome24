@@ -39,4 +39,7 @@ Route::post('/save-request', [IndexController::class, 'saveRequest'])->name('sav
 Route::post('/send-otp', [PasswordResetLinkController::class, 'sendOtp'])->name('password.email');
 Route::post('/verify-otp', [PasswordResetLinkController::class, 'verifyOtp'])->name('password.reset');
 
+Route::get('/api/filter-requests', [IndexController::class, 'filterRequests']);
+Route::get('/api/filter-posts', [IndexController::class, 'filterPosts']);
+
 require __DIR__.'/auth.php';

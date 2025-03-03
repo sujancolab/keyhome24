@@ -175,4 +175,148 @@ class IndexController extends Controller
     public function legal(){
         return view('legal');
     }
+
+    public function filterRequests(Request $request)
+    {
+        \Log::info('Filter Requests Parameters:', $request->all());
+
+        $query = RequestModel::query();
+
+        // Filter by type (colocation, location, reprise)
+        if ($request->type) {
+            $type = strtolower($request->type);
+            if ($type === 'colocation') {
+                $query->where('search_type', 'shared_accommodation');
+            } elseif ($type === 'location') {
+                $query->where('search_type', 'rental');
+            } elseif ($type === 'reprise') {
+                $query->where('search_type', 'recovery');
+            }
+        }
+
+        // Filter by location (city or postal code)
+        if ($request->location) {
+            $query->where(function($q) use ($request) {
+                $q->where('city', 'LIKE', '%' . $request->location . '%')
+                  ->orWhere('npa', 'LIKE', '%' . $request->location . '%');
+            });
+        }
+
+        // Filter by maximum budget
+        if ($request->max_budget) {
+            \Log::info('Applying max budget filter:', ['max_budget' => $request->max_budget]);
+            $query->where('max_budget', '<=', $request->max_budget);
+        }
+
+        // Filter by date
+        if ($request->date) {
+            $query->whereDate('created_at', '>=', $request->date);
+        }
+
+        // Apply sorting
+        if ($request->sort) {
+            switch ($request->sort) {
+                case 'most_recent':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+                case 'price_asc':
+                    $query->orderBy('max_budget', 'asc');
+                    break;
+                case 'price_desc':
+                    $query->orderBy('max_budget', 'desc');
+                    break;
+                default:
+                    $query->orderBy('created_at', 'desc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        // Get paginated results
+        $requests = $query->paginate(6);
+
+        // Format the response
+        $formattedRequests = $requests->map(function($request) {
+            return [
+                'id' => $request->id,
+                'search_type' => ucfirst($request->search_type),
+                'search' => $request->search,
+                'location' => $request->npa,
+                'city' => $request->city,
+                'max_budget' => number_format($request->max_budget, 2),
+                'created_at' => $request->created_at->format('d/m/Y'),
+                'phone' => $request->phone,
+                'email' => $request->email
+            ];
+        });
+
+        return response()->json([
+            'requests' => $formattedRequests,
+            'total' => $requests->total(),
+            'links' => $requests->links()->toHtml()
+        ]);
+    }
+
+    public function filterPosts(Request $request)
+    {
+        $query = Post::query();
+
+        // Filter by type (buy or rent)
+        if ($request->type) {
+            $type = strtolower($request->type);
+            $query->where('ad_type', $type === 'buy' ? 'sell' : 'rent');
+        }
+
+        // Filter by location
+        if ($request->location) {
+            $query->where(function($q) use ($request) {
+                $q->where('city', 'LIKE', '%' . $request->location . '%')
+                  ->orWhere('postal_code', 'LIKE', '%' . $request->location . '%')
+                  ->orWhere('address', 'LIKE', '%' . $request->location . '%');
+            });
+        }
+
+        // Filter by property type
+        if ($request->property_type) {
+            $query->where('property_type', $request->property_type);
+        }
+
+        // Filter by maximum budget
+        if ($request->max_budget) {
+            $query->where('price', '<=', $request->max_budget);
+        }
+
+        // Filter by rooms
+        if ($request->rooms) {
+            $query->where('rooms', '=', $request->rooms);
+        }
+
+        // Apply sorting
+        if ($request->sort) {
+            switch ($request->sort) {
+                case 'most_recent':
+                    $query->orderBy('created_at', 'desc');
+                    break;
+                case 'price_asc':
+                    $query->orderBy('price', 'asc');
+                    break;
+                case 'price_desc':
+                    $query->orderBy('price', 'desc');
+                    break;
+                default:
+                    $query->orderBy('created_at', 'desc');
+            }
+        } else {
+            $query->orderBy('created_at', 'desc');
+        }
+
+        // Get paginated results
+        $posts = $query->paginate(6);
+
+        return response()->json([
+            'posts' => $posts->items(),
+            'total' => $posts->total(),
+            'links' => $posts->links()->toHtml()
+        ]);
+    }
 }

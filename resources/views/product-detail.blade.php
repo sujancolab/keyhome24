@@ -98,10 +98,10 @@
             <h4 class="tab_title mb-4">Real estate agency</h4>
             <div class="row">
                 <div class="col-md-12">
-                    <p>56547577575</p>
-                    <p>jkhjdhsa.c clacsdcs@hhh</p>
-                    <p>56547577575</p>
-                    <p>jkhjdhsa.ccsdcs@hhh</p>
+                    <p>{{$post->agency_name}}</p>
+                    <p>{{$post->email}}</p>
+                    <p>{{$post->phone}}</p>
+                    <p>{{$post->address}}</p>
                 </div>
             </div>
         </div>

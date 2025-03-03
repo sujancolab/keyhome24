@@ -59,7 +59,7 @@
                   </div>
                   <div class="blog_txt_area">
                     <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>{{$post->address}},{{$post->address_property}}</h5>
-                    <h3 class="blog_h_head">{{$post->property_type}}, {{$post->rooms}} rooms, {{$post->surface_area}} m²</h3>
+                    <h3 class="blog_h_head">{{ucfirst($post->property_type)}}, {{$post->rooms}} rooms, {{$post->surface_area}} m²</h3>
                     <ul class="list_amenties">
                       <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
                       <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
