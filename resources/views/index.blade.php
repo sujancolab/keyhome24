@@ -53,17 +53,17 @@
                         @endif
                     </div>
                     <div class="pro_price_over">
-                      <h4>{{$post->price}} CHF</h4>
+                      <h4>{{explode(',', $post->price)[0]}} CHF</h4>
                       <p>Gross price</p>
                     </div>
                   </div>
                   <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>{{$post->address}},{{$post->address_property}}</h5>
+                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>{{$post->postal_code}},{{$post->city}},{{$post->address}},{{$post->address_property}},{{$post->address_property}}</h5>
                     <h3 class="blog_h_head">{{ucfirst($post->property_type)}}, {{$post->rooms}} rooms, {{$post->surface_area}} m²</h3>
                     <ul class="list_amenties">
                       <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
+                      <li><img src="assets/images/amenties_bath.svg" alt="" /> {{$post->bathrooms}}</li>
+                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> {{$post->surface_area}} m²</li>
                     </ul>
                   </div>
                 </div>

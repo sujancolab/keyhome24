@@ -2,7 +2,7 @@
 @section('content')
 <!-- hero_form_sec -->
 {{-- {{$post}} --}}
-<section class="comman_tb_padding">
+<section class="comman_tb_padding product_details_sec">
     <div class="container">
         <div class="img_slider_area">
             <div class="owl_slider">
@@ -90,7 +90,7 @@
         <div class="form_vidget">
             <p class="mb-0">
                 <img src="images/date_icon.svg" class="me-1" alt="" />
-                Available from 02/22/2025
+                Available from {{date('Y-m-d')}}
             </p>
         </div>
 

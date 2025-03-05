@@ -4,7 +4,7 @@
 	right:0;
 	left:0;
 /*	background: #fff;*/
-	
+
 	/*box-shadow: 0 0 10px rgb(236, 223, 223);*/
 	z-index: 99;
 	/*border-bottom: 1px solid #111;*/
@@ -13,10 +13,10 @@
 }
 	#sticky-wrap.stickyhead.nav_sec.navbar .navbar-nav li a
 	{
-		
+
 		transition-duration: 0.4s;
 	}
-	
+
 
 
 
@@ -27,7 +27,7 @@
 	.hide_mob{
 		display: none !important;
 	}
-	
+
 }
 @media (min-width: 767px){
 	.mobile_logo{
@@ -36,7 +36,7 @@
 	.hide_desk{
 		display: none !important;
 	}
-	
+
 }
 
 
@@ -66,11 +66,11 @@
 	.nav_sec .stellarnav > ul > li .dropdown .dropdown-toggle {
 		font-size: 14px;
 	}
-	
+
 	.bg_animation1 {
 		animation: bg-animate 4s linear infinite
 	}
-	
+
 	.footer_box {
 		margin-bottom: 20px;
 	}
@@ -79,9 +79,9 @@
 	}
 }
 @media only screen and (min-width:320px) and (max-width:767px) {
-	
+
 /*====== Comman ====== */
-	
+
 	.logo_area
 	{
 		display: flex;
@@ -179,9 +179,9 @@
 /*=== Top Header ====*/
 	.nav_sec
 	{
-		
+
 	}
-	
+
 	.nav_sec .navbar-brand
 	{
 		display: block;
@@ -189,7 +189,7 @@
 	.logo_box img {
 		max-width: 150px;
 	}
-	
+
 	.ads_vidget_box
 	{
 		flex-wrap: wrap;
@@ -199,11 +199,11 @@
 		margin-top: 10px;
 	}
 	.comman_heading h2
-	
+
 	{
 		font-size: 30px;
 	}
-	
+
 	.hero_form_sec .main_form_title {
 		font-size: 26px;
 	}
@@ -211,8 +211,10 @@
 	{
 		font-size: 26px;
 	}
-	
-	
+	.product_details_sec .owl-carousel .owl-item img {
+		height: 330px;
+	  }
+
 	.footer_copy p
 	{
 		text-align: center;
@@ -230,13 +232,13 @@
 	.footer_box {
 		margin-bottom: 30px;
 	}
-	
+
 
 }
 
 
 @media only screen and (min-width:320px) and (max-width:575px) {
-	
+
 	.logo_area
 	{
 		width: 40%;
@@ -245,7 +247,7 @@
 	{
 		width: 60%;
 	}
-	
+
 	.stellarnav .menu-toggle
 	{
 		padding: 5px;
@@ -275,12 +277,12 @@
 		width: 100%;
 		margin-top: 15px;
 	}
-	
-	
+
+
 }
 
 @media only screen and (min-width:480px) and (max-width:767px) {
-	
+
 
 }
 
@@ -297,14 +299,14 @@
 	{
 		padding: 0 0 0 0;
 	}
-	
+
 	.nav_sec .stellarnav > ul > li > a
 	{
 		padding: 15px 10px;
 		letter-spacing: 0;
 		    font-size: 14px;
 	}
-	
+
 	.logo_box img {
 		max-width: 200px;
 	}
@@ -312,20 +314,20 @@
 	{
 		font-size: 31px;
 	}
-	
-	
+
+
 	.footer_box .ft_heading
 	{
 		font-size: 19px;
 	}
-	
+
 }
 
 /********************@media only screen and (min-width:1024px) and (max-width:1200px)********************/
 
 
 @media (min-width:992px) and (max-width:1199px) {
-	
+
 	.nav_sec.navbar .navbar-nav li a:before
 	{
 		top: 9px;
@@ -347,12 +349,12 @@
 	{
 		font-size: 14px;
 	}
-	
+
 }
 
-	
+
 /********************@media only screen and (min-width:1201px)********************/
 
-	
+
 
 /********************@media only screen and (min-width:1201px)********************/

@@ -25,7 +25,7 @@
           </div>
 
           <div class="form-check mb-3 text-end">
-              <a href="" class="forgot_link">Forgot Password?</a>
+              <a href="{{url('/forgot-password')}}" class="forgot_link">Forgot Password?</a>
           </div>
           <div class="mb-3">
               <button type="submit" class="btn btn_comman w-100">Login</button>

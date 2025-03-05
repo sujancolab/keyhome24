@@ -133,10 +133,32 @@
                                                             class="mandatory">*</span></label>
                                                     <select class="form-control custom-select" name="category">
                                                         <option value="">Select a category</option>
-                                                        <option value="residential">Residential</option>
-                                                        <option value="commercial">Commercial</option>
-                                                        <option value="ground">Ground</option>
-                                                        <option value="parking">Parking</option>
+                                                        <optgroup label="Residential">
+                                                            <option value="apartment">Apartment</option>
+                                                            <option value="house">House</option>
+                                                            <option value="villa">Villa</option>
+                                                            <option value="studio">Studio</option>
+                                                            <option value="duplex">Duplex</option>
+                                                            <option value="chalet">Chalet</option>
+                                                            <option value="loft">Loft</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Commercial">
+                                                            <option value="office">Office</option>
+                                                            <option value="commercial space">Commercial space</option>
+                                                            <option value="warehouse">Warehouse</option>
+                                                            <option value="factory">Factory</option>
+                                                            <option value="farm">Farm</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Land">
+                                                            <option value="building_land">Building Plot</option>
+                                                            <option value="agricultural_land">Agricultural Land</option>
+                                                        </optgroup>
+                                                        <optgroup label="Parking">
+                                                            <option value="garage">Garage</option>
+                                                            <option value="parking_lot">Parking lot</option>
+                                                        </optgroup>
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
@@ -430,18 +452,18 @@
                                         <div class="form_vidget">
                                             <p class="mb-0">
                                                 <img src="images/date_icon.svg" class="me-1" alt="" />
-                                                Available from 02/22/2025
+                                                Available from {{ date('Y-m-d')}}
                                             </p>
                                         </div>
 
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Real estate agency</h4>
+                                            <h4 class="tab_title mb-4 ">Real estate agency</h4>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p>56547577575</p>
-                                                    <p>jkhjdhsa.c clacsdcs@hhh</p>
-                                                    <p>56547577575</p>
-                                                    <p>jkhjdhsa.ccsdcs@hhh</p>
+                                                    <p class="agency_name">56547577575</p>
+                                                    <p class="phone_number">jkhjdhsa.c clacsdcs@hhh</p>
+                                                    <p class="email">56547577575</p>
+                                                    <p class="address">jkhjdhsa.ccsdcs@hhh</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -603,6 +625,10 @@
             $(".feature_summry_bx h4").eq(0).text(`${surfaceArea} m²`);
             $(".feature_summry_bx h4").eq(1).text(`${floor}`);
             $(".post_description").eq(0).text(description);
+            $(".agency_name").text(agencyName);
+            $(".email").text(email);
+            $(".phone_number").text(phone);
+            $(".address").text(address);
 
             // Update the equipment list
             var features = $("input[name='features[]']:checked").map(function() {
@@ -663,7 +689,7 @@
                                                             <img class="preview_image" width="200" src="${e.target.result}" alt="" />
                                                         </div>
                                                     </div>`;
-                                                    $(".preview_image").append(sliderprevhtml);
+                                                    $("#features_img_slider").append(sliderprevhtml);
 
                             imgWrap.append(html);
                             updateFileCount(fileCountElement);

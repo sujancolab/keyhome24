@@ -7,11 +7,11 @@
         <div class="nav_area">
           <div class="stellarnav">
             <ul>
-                <div class="mobile_logo"><a class="" href="index.html"><img src="assets/images/logo.png" alt="" /></a></div>
+                <div class="mobile_logo"><a class="" href="index.html"><img src="{{asset('assets/images/logo.png')}}" alt="" /></a></div>
                 <li class="hide_desk mt-3" id="language_li">
                   <div class="dropdown">
                     <div class="dropdown-toggle lang_toggle">
-                        <img src="assets/images/globe_icon.svg" alt="globe icon">
+                        <img src="{{asset('assets/images/globe_icon.svg')}}" alt="" />
                         <span class="selected-lang">French</span>
                     </div>
                     <div class="dropdown-menu">
@@ -28,12 +28,12 @@
                     </div>
                 </div>
                 </li>
-              <li class="active-"><a href="{{route('rent-buy')}}"><i class="fa fa-building-o" aria-hidden="true"></i> Properties</a></li>
-              <li><a href="{{route('share-accommodation')}}"><img src="assets/images/search_con_nav.svg" alt="">Requests</a></li>
+              <li class="active-"><a href="{{route('rent-buy')}}"><i class="fa fa-building-o me-1" aria-hidden="true"></i> Properties</a></li>
+              <li><a href="{{route('share-accommodation')}}"><img src="{{asset('assets/images/search_con_nav.svg')}}" alt="" /> Requests</a></li>
               <li class="hide_mob" id="language_li">
                 <div class="dropdown">
                   <div class="dropdown-toggle lang_toggle">
-                      <img src="assets/images/globe_icon.svg" alt="globe icon">
+                      <img src="{{asset('assets/images/globe_icon.svg')}}" alt="" />
                       <span class="selected-lang">French</span>
                   </div>
                   <div class="dropdown-menu">

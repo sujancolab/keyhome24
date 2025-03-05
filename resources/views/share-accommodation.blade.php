@@ -3,7 +3,7 @@
     <!-- hero_form_sec -->
     <section class="hero_form_sec for_blue_bg_only text-center py-5-">
         <div class="container">
-            <h1 class="main_form_title text-white">Research Requests</h1>
+            <h1 class="main_form_title text-white">Requests</h1>
             <div class="hero_form_area">
                 <div class="home_page_tab_area_only home_page_form_nav">
                     <ul class="" role="tablist">

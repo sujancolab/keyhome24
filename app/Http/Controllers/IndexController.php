@@ -205,7 +205,7 @@ class IndexController extends Controller
         // Filter by maximum budget
         if ($request->max_budget) {
             \Log::info('Applying max budget filter:', ['max_budget' => $request->max_budget]);
-            $query->where('max_budget', '<=', $request->max_budget);
+            $query->where('max_budget', '<=', floatval($request->max_budget));
         }
 
         // Filter by date
