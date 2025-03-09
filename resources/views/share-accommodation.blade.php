@@ -11,7 +11,7 @@
                             <a class="nav-link active" data-bs-toggle="pill" href="#tab_buy">Colocation</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="pill" href="#tab_rent">Location</a>
+                            <a class="nav-link" data-bs-toggle="pill" href="#tab_rent">Housing</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-bs-toggle="pill" href="#tab_reprise">Reprise</a>
@@ -179,7 +179,7 @@
     <section class="properties_sec comman_tb_padding">
         <div class="container">
             <div class="property_result_title two_column_title">
-                <h2 class="mb-0">{{ $requests->total() }} Research requests</h2>
+                <h2 class="mb-0">{{ $requests->total() }} Demandes</h2>
                 <div class="">
                     <select class="custom-select form-control">
                         <option value="most_recent">Most Recent</option>
@@ -203,7 +203,7 @@
                         </ul>
                         <p class="ft_weight">{{ $request->search }}</p>
                         <div class="list_call_action">
-                            <a class="btn_list_action btn_to_call" href="tel:{{ $request->phone }}">To Call</a>
+                            <a class="btn_list_action btn_to_call" href="tel:{{ $request->phone }}">Call</a>
                             <a class="btn_list_action btn_to_mail" href="mailto:{{ $request->email }}">E-mail</a>
                             <a class="btn_list_action btn_to_share" href="tel:{{ $request->phone }}">Share</a>
                         </div>
@@ -276,6 +276,7 @@
                     // Add new results
                     if(response.requests && response.requests.length > 0) {
                         response.requests.forEach(request => {
+                            console.log(request.search_type);
                             $('.latest_new_area').append(`
                                 <div class="full_property_listing_repeat">
                                     <h3>Request for shared accommodation - ${request.search_type}

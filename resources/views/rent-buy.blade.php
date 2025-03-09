@@ -31,24 +31,33 @@
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
                                             <select class="custom-select form-control property_type" name="property_type">
-                                                <option value="" selected>Select a category</option>
-                                                <optgroup label="Residential">
-                                                    <option value="apartment">Apartment</option>
-                                                    <option value="house">House</option>
-                                                    <option value="villa">Villa</option>
-                                                    <option value="studio">Studio</option>
-                                                    <option value="loft">Loft</option>
-                                                </optgroup>
-                                                <optgroup label="Commercial">
-                                                    <option value="office">Office</option>
-                                                    <option value="shop">Shop</option>
-                                                    <option value="restaurant">Restaurant</option>
-                                                    <option value="warehouse">Warehouse</option>
-                                                </optgroup>
-                                                <optgroup label="Land">
-                                                    <option value="building_land">Building Plot</option>
-                                                    <option value="agricultural_land">Agricultural Land</option>
-                                                </optgroup>
+                                                <option value=""> Select Category</option>
+                                                 <optgroup label="Residential">
+                                                            <option value="apartment">Apartment</option>
+                                                            <option value="house">House</option>
+                                                            <option value="villa">Villa</option>
+                                                            <option value="studio">Studio</option>
+                                                            <option value="duplex">Duplex</option>
+                                                            <option value="chalet">Chalet</option>
+                                                            <option value="loft">Loft</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Commercial">
+                                                            <option value="office">Office</option>
+                                                            <option value="commercial space">Commercial space</option>
+                                                            <option value="warehouse">Warehouse</option>
+                                                            <option value="factory">Factory</option>
+                                                            <option value="farm">Farm</option>
+                                                        </optgroup>
+
+                                                        <optgroup label="Land">
+                                                            <option value="building_land">Building Plot</option>
+                                                            <option value="agricultural_land">Agricultural Land</option>
+                                                        </optgroup>
+                                                        <optgroup label="Parking">
+                                                            <option value="garage">Garage</option>
+                                                            <option value="parking_lot">Parking lot</option>
+                                                        </optgroup>
                                             </select>
                                             <div class="inp_icon">
                                                 <img src="assets/images/home_icon.svg">
@@ -162,7 +171,7 @@
     <section class="properties_sec comman_tb_padding">
         <div class="container">
             <div class="property_result_title two_column_title">
-                <h2 class="mb-0">{{ $posts->total() }} Announcement</h2>
+                <h2 class="mb-0">{{ count($posts) }} Announcement</h2>
                 <div class="property_select">
                     <select class="custom-select form-control">
                         <option value="most_recent">Most Recent</option>
@@ -182,7 +191,7 @@
                                         <div class="upcomimg_events_img_box"> <img
                                                 src="{{ asset('storage/' . $post->photos[0]) }}" alt=""> </div>
                                         <div class="pro_price_over">
-                                            <h4>{{ explode(',', $post->price)[0] }} CHF</h4>
+                                            <h4 class="price_sepration">{{ explode(',', $post->price)[0] }} CHF</h4>
                                             <p>Gross price</p>
                                         </div>
                                     </div>
@@ -203,9 +212,7 @@
                             </a>
                         </div>
                     @endforeach
-                    <div class="d-flex justify-content-center">
-                        {{ $posts->links() }}
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -323,7 +330,7 @@
                                                     </div>
                                                     <div class="pro_price_over">
                                                      <h4>${post.price} CHF</h4>
-                                                        <p>${activeTab=="buy" ? "Gross price":" Gross price/monthly"} Gross price</p>
+                                                        <p>${post.ad_type=="sell" ? "Gross price":" Gross price/monthly"} </p>
                                                     </div>
                                                 </div>
                                                 <div class="blog_txt_area">
@@ -345,15 +352,15 @@
                         }
 
                         // Update pagination if provided in response
-                        if (response.links) {
-                            $('.latest_new_area .row').append(`
-                                <div class="col-12">
-                                    <div class="d-flex justify-content-center">
-                                        ${response.links}
-                                    </div>
-                                </div>
-                            `);
-                        }
+                        // if (response.links) {
+                        //     $('.latest_new_area .row').append(`
+                        //         <div class="col-12">
+                        //             <div class="d-flex justify-content-center">
+                        //                 ${response.links}
+                        //             </div>
+                        //         </div>
+                        //     `);
+                        // }
                     },
                     error: function(xhr, status, error) {
                         console.error('Error fetching filtered results:', error);
@@ -366,7 +373,7 @@
             }
 
             // Initial call to updateResults
-            updateResults();
+            // updateResults();
         });
     </script>
 

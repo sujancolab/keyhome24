@@ -528,6 +528,23 @@
     }
 
     function next() {
+        var currentTab = $(tabs[current]);
+        var isValid = true;
+
+        currentTab.find("[required]").each(function() {
+            if ($(this).val() === "") {
+                isValid = false;
+                $(this).addClass("is-invalid"); // Add invalid class for styling
+            } else {
+                $(this).removeClass("is-invalid"); // Remove invalid class if filled
+            }
+        });
+
+        if (!isValid) {
+            alert("Please fill out all required fields.");
+            return; // Stop the function if validation fails
+        }
+
         $(tabs[current]).addClass("d-none"); // Hide current tab
         $(tabs_pill[current]).removeClass("active"); // Remove active
 

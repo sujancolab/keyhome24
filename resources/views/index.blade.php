@@ -35,7 +35,7 @@
     <div class="container">
       <div class="heading_box two_column_title text-center-">
         <h2 class="">Featured Properties</h2>
-        <a class="right_arrow_more" href="">See More <img src="assets/images/right_arrow_big.svg" alt="" /></a>
+        <!--<a class="right_arrow_more" href="">See More <img src="assets/images/right_arrow_big.svg" alt="" /></a>-->
       </div>
       <!--  -->
       <div class="latest_new_area comman_top">
@@ -53,8 +53,8 @@
                         @endif
                     </div>
                     <div class="pro_price_over">
-                      <h4>{{explode(',', $post->price)[0]}} CHF</h4>
-                      <p>Gross price</p>
+                      <h4 class="price_sepration">{{explode('.', $post->price)[0]}} CHF</h4>
+                      <p>{{$post->ad_type=="sell" ? "Gross price":" Gross price/monthly"}}</p>
                     </div>
                   </div>
                   <div class="blog_txt_area">
@@ -71,53 +71,9 @@
           </div>
           @endforeach
           <!-- Pagination Links -->
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center pagination_style">
     {{ $posts->links() }}
 </div>
-          {{-- <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
-                <div class="blog_box_h_inner">
-                  <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="assets/images/properties1.jpg" alt=""> </div>
-                    <div class="pro_price_over">
-                      <h4>950,000 CHF</h4>
-                      <p>Gross price</p>
-                    </div>
-                  </div>
-                  <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>1007 Lausanne, Avenue de Cour 25</h5>
-                    <h3 class="blog_h_head">Apartment, 4.5 rooms, 120 m²</h3>
-                    <ul class="list_amenties">
-                      <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
-                    </ul>
-                  </div>
-                </div>
-              </a>
-          </div>
-          <div class="col-lg-4 col-md-6 col-sm-12 blog_box_main d-flex">
-              <a href="">
-                <div class="blog_box_h_inner">
-                  <div class="blog_img_box upcomimg_events_box_inner">
-                    <div class="upcomimg_events_img_box"> <img src="assets/images/properties1.jpg" alt=""> </div>
-                    <div class="pro_price_over">
-                      <h4>950,000 CHF</h4>
-                      <p>Gross price</p>
-                    </div>
-                  </div>
-                  <div class="blog_txt_area">
-                    <h5><span><img src="assets/images/location_icon.svg" alt="" /></span>1007 Lausanne, Avenue de Cour 25</h5>
-                    <h3 class="blog_h_head">Apartment, 4.5 rooms, 120 m²</h3>
-                    <ul class="list_amenties">
-                      <li><img src="assets/images/amenties_bed.svg" alt="" /> 4.5</li>
-                      <li><img src="assets/images/amenties_bath.svg" alt="" /> 2</li>
-                      <li><img src="assets/images/amenties_measure2.svg" alt="" /> 200 m²</li>
-                    </ul>
-                  </div>
-                </div>
-              </a>
-          </div> --}}
         </div>
 
       </div>

@@ -19,9 +19,8 @@
                         <div class="profile_info">
                             <p><strong>Account Information</strong></p>
                             <p>Email: {{ Auth::user()->email }}</p>
-                            <p>Phone: +33 1 23 45 67 89</p>
-                            <p>Active ads: 3</p>
-                            <p>Active requests: 3</p>
+                            <p>Active ads: {{count($posts)}}</p>
+                            <p>Active requests: {{count($requests)}}</p>
                         </div>
                     </div>
                 </div>
@@ -367,12 +366,22 @@
                                         </div>
                                     </div>
                                     <div class="tab d-none">
-                                        <div class="img_slider_area">
+                                        <div class="img_slider_area imgresize">
                                             <div class="owl_slider">
                                                 <div class="owl-carousel owl-theme preview_image" id="features_img_slider">
                                                     <div class="item">
                                                         <div class="owl_img">
-                                                            <img class="preview_image" src="images/properties1.jpg" alt="" />
+                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="owl_img">
+                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="item">
+                                                        <div class="owl_img">
+                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
                                                         </div>
                                                     </div>
 
@@ -449,15 +458,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form_vidget">
-                                            <p class="mb-0">
-                                                <img src="images/date_icon.svg" class="me-1" alt="" />
-                                                Available from {{ date('Y-m-d')}}
-                                            </p>
-                                        </div>
+                                        <!--<div class="form_vidget">-->
+                                        <!--    <p class="mb-0">-->
+                                        <!--        <img src="images/date_icon.svg" class="me-1" alt="" />-->
+                                        <!--        Available from {{ date('Y-m-d')}}-->
+                                        <!--    </p>-->
+                                        <!--</div>-->
 
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4 ">Real estate agency</h4>
+                                            <h4 class="tab_title mb-4 ">Advertiser</h4>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <p class="agency_name">56547577575</p>
@@ -586,6 +595,24 @@
         }
 
         function next() {
+            // Check if all required fields in the current tab are filled
+            var currentTab = $(tabs[current]);
+            var isValid = true;
+
+            currentTab.find("[required]").each(function() {
+                if ($(this).val() === "") {
+                    isValid = false;
+                    $(this).addClass("is-invalid"); // Add invalid class for styling
+                } else {
+                    $(this).removeClass("is-invalid"); // Remove invalid class if filled
+                }
+            });
+
+            if (!isValid) {
+                alert("Please fill out all required fields.");
+                return; // Stop the function if validation fails
+            }
+
             $(tabs[current]).addClass("d-none"); // Hide current tab
             $(tabs_pill[current]).removeClass("active"); // Remove active
 
@@ -686,13 +713,41 @@
                                 "' class='img-bg'><div class='upload__img-close'></div></div></div>";
                             var sliderprevhtml=`<div class="item">
                                                         <div class="owl_img">
-                                                            <img class="preview_image" width="200" src="${e.target.result}" alt="" />
+                                                            <img class="preview_image"  src="${e.target.result}" alt="" />
                                                         </div>
                                                     </div>`;
                                                     $("#features_img_slider").append(sliderprevhtml);
 
                             imgWrap.append(html);
                             updateFileCount(fileCountElement);
+                            // Destroy and reinitialize Owl Carousel
+                    var owl = $("#features_img_slider");
+                    owl.owlCarousel('destroy');
+                    owl.owlCarousel({
+                        autoplay:false,
+                        loop:false,
+                        nav:true,
+                        dots:false,
+                        margin:0,
+                        // center: true,
+                        animationSpeed: 200,
+                        
+                        //animateOut: 'fadeOut',
+                        items: 1,
+                        navText: [ '<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>' ],
+    
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 1
+                            },
+                            1000: {
+                                items: 1
+                            }
+                        }
+                    });
 
                             // Set the src of images with class 'preview_image'
                             // $(".preview_image").each(function(index) {

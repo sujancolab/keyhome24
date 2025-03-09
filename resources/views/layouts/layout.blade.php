@@ -11,6 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}" />
+<link href="{{asset('assets/css/viewbox.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/stellarnav.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/custom.css')}}" rel="stylesheet">
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet">
@@ -70,6 +71,7 @@
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/owl.carousel.js')}}"></script>
 <script src="{{asset('assets/js/stellarnav.js')}}"></script>
+<script src="{{asset('assets/js/jquery.viewbox.js')}}"></script>
 <!-- <script src="js/video.popup.js"></script>  -->
 <script src="{{asset('assets/js/custom.js')}}"></script>
 @yield('scripts')

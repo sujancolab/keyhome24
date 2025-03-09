@@ -13,7 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::with('user')->paginate(6);
         return view('index')->with(compact('posts'));
         // return Inertia::render('Welcome', [
         //     'posts' => $posts
@@ -22,7 +22,8 @@ class IndexController extends Controller
     //
     public function rentBuy()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::with('user')->get();//paginate(6);
+        // dd($posts);
         return view('rent-buy')->with(compact('posts'));
         // return Inertia::render('RentBuy', [
         //     'posts' => $posts
@@ -36,13 +37,15 @@ class IndexController extends Controller
     }
     public function detailView($id)
     {
-        $post =Post::where('id',$id)->first();
+        $post =Post::where('id',$id)->with('user')->first();
         // return Inertia::render('ProductDetail');
         return view('product-detail')->with(compact('post'));
     }
     public function addPost()
     {
-        return view('add-post');
+        $posts=Post::where('user_id',Auth::user()->id)->get();
+        $requests=RequestModel::where('user_id',Auth::user()->id)->get();
+        return view('add-post')->with(compact('posts','requests'));
         // return Inertia::render('AddPost');
     }
     public function addRequest()
@@ -53,6 +56,7 @@ class IndexController extends Controller
     public function savePost(Request $request)
     {
         // Validate the incoming request data
+        // dd($request->all());
         try {
             $validatedData = $request->validate([
                 'agency_name' => 'required|string|max:255',
@@ -62,7 +66,7 @@ class IndexController extends Controller
                 'location' => 'required|string|max:255',
                 'ad_type' => 'required|string',
                 'category' => 'required|string',
-                // 'property_type' => 'required|string',
+                'property_type' => 'required|string',
                 'price' => 'required|numeric',
                 'address_property' => 'required|string|max:255',
                 'postal_code' => 'required|string|max:10',
@@ -75,7 +79,7 @@ class IndexController extends Controller
                 'features' => 'nullable|array',
                 'description' => 'required|string',
                 'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10240',
-                // 'documents.*' => 'nullable|mimes:pdf|max:10240',
+                'documents.*' => 'nullable|mimes:pdf|max:10240',
                 'publication_duration' => 'required|string',
                 'payment_method' => 'required|string',
             ]);
@@ -264,7 +268,7 @@ class IndexController extends Controller
         // Filter by type (buy or rent)
         if ($request->type) {
             $type = strtolower($request->type);
-            $query->where('ad_type', $type === 'buy' ? 'sell' : 'rent');
+            $query->where('ad_type', $type === 'acheter' || $type === 'buy' ? 'sell' : 'rent');
         }
 
         // Filter by location
@@ -278,7 +282,7 @@ class IndexController extends Controller
 
         // Filter by property type
         if ($request->property_type) {
-            $query->where('property_type', $request->property_type);
+            $query->where('property_type','LIKE', '%'.$request->property_type.'%');
         }
 
         // Filter by maximum budget
@@ -311,12 +315,12 @@ class IndexController extends Controller
         }
 
         // Get paginated results
-        $posts = $query->paginate(6);
+        $posts = $query->get();//paginate(6);
 
         return response()->json([
-            'posts' => $posts->items(),
-            'total' => $posts->total(),
-            'links' => $posts->links()->toHtml()
+            'posts' => $posts,
+            'total' => count($posts)
+            
         ]);
     }
 }

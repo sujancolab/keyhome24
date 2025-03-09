@@ -40,4 +40,7 @@ class Post extends Model
         'photos' => 'array',
         'documents' => 'array',
     ];
+      public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
