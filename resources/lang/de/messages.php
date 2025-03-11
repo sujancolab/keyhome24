@@ -1,0 +1,31 @@
+<?php
+return [
+    'welcome' => 'Willkommen',
+    'submit' => 'Einreichen',
+    'properties'=>'Eigenschaften',
+    'requests'=>'Requests',
+    'dashboard'=>'Dashboard',
+    'logout'=>"Logout",
+    'login'=>"Login",
+    'footer_title'=>"Votre partenaire de confiance pour trouver le bien immobilier de vos rêves.",
+    'contact'=>"Contact",
+    "home"=>"Home",
+    "terms_condition"=>"Terms & Condition",
+    "data_protecttion"=>"Data Protection",
+    "legal_notice"=>"Legal Notices",
+    "rent"=>"Rent",
+    "buy"=>"Buy",
+    "to_rent_out"=>"To Rent Out",
+    "feature_properties"=>"Feature Properties",
+    "why_trust_us"=>"Why trust us",
+    "safety_guarented"=>"Safety guaranteed",
+    "secure_transaction_and_protected_data"=>"Secure transactions and protected data",
+    "tarif_transparents"=>"Tarifs transparents",
+    "tarif_transparents_bellow"=>"Prix compétitifs sans frais cachés",
+    "service_support"=>"Service support",
+    "service_support_bellow"=>"Une équipe après-vente disponible 7j/7",
+    "visibility"=>"Visibilité maximale",
+    "visibility_bellow"=>"Augmentez la visibilité grâce à nos campagnes",
+    "announcement"=>"Announcement"
+    // Add more translations as needed
+];

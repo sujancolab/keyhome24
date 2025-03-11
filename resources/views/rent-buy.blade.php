@@ -8,10 +8,10 @@
                 <div class="home_page_tab_area_only home_page_form_nav">
                     <ul class="" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-title="Buy" data-bs-toggle="pill" href="#tab_buy">Buy</a>
+                            <a class="nav-link active" data-title="Buy" data-bs-toggle="pill" href="#tab_buy">{{__('messages.buy')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-title="Rent" data-bs-toggle="pill" href="#tab_rent">To Rent Out</a>
+                            <a class="nav-link" data-title="Rent" data-bs-toggle="pill" href="#tab_rent"> {{__('messages.to_rent_out')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -171,7 +171,7 @@
     <section class="properties_sec comman_tb_padding">
         <div class="container">
             <div class="property_result_title two_column_title">
-                <h2 class="mb-0">{{ count($posts) }} Announcement</h2>
+                <h2 class="mb-0">{{ count($posts) }} {{__('messages.announcement')}} </h2>
                 <div class="property_select">
                     <select class="custom-select form-control">
                         <option value="most_recent">Most Recent</option>
@@ -212,7 +212,7 @@
                             </a>
                         </div>
                     @endforeach
-                   
+
                 </div>
             </div>
         </div>

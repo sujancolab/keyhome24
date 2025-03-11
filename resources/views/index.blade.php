@@ -10,19 +10,19 @@
               <li>
                 <a class="active" href="{{route('rent-buy')}}">
                   <img src="{{ asset('assets/images/key_icon.svg') }}" alt="" />
-                  Rent
+                  {{ __('messages.rent') }}
                 </a>
             </li>
             <li>
                 <a class="" href="{{route('rent-buy')}}">
                   <img src="{{ asset('assets/images/home_icon.svg') }}" alt="" />
-                Buy
+                  {{ __('messages.buy') }}
                 </a>
             </li>
             <li>
                 <a class="" href="{{route('share-accommodation')}}">
                   <img src="{{ asset('assets/images/user_multiple.svg') }}" alt="" />
-                  Requests
+                  {{ __('messages.requests') }}
                 </a>
             </li>
             </ul>
@@ -34,7 +34,7 @@
   <section class="properties_sec comman_tb_padding">
     <div class="container">
       <div class="heading_box two_column_title text-center-">
-        <h2 class="">Featured Properties</h2>
+        <h2 class="">{{ __('messages.feature_properties') }}</h2>
         <!--<a class="right_arrow_more" href="">See More <img src="assets/images/right_arrow_big.svg" alt="" /></a>-->
       </div>
       <!--  -->
@@ -85,7 +85,7 @@
   <section class="website_feature_sec">
     <div class="container">
       <div class="heading_box text-center">
-        <h2 class="">Why trust us?</h2>
+        <h2 class="">{{ __('messages.why_trust_us') }}?</h2>
       </div>
       <div class="comman_top">
         <div class="row">
@@ -94,8 +94,8 @@
               <div class="cus_pro_img">
                 <img src="assets/images/safety_guard_icon.svg">
               </div>
-              <h3>Safety guaranteed</h3>
-              <p>Secure transactions and protected data</p>
+              <h3>{{ __('messages.safety_guarented') }}</h3>
+              <p>{{__('secure_transaction_and_protected_data')}}</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 cus_stories_bx text-center">
@@ -103,8 +103,8 @@
               <div class="cus_pro_img">
                 <img src="assets/images/tarifs_transparents.svg">
               </div>
-              <h3>Tarifs transparents</h3>
-              <p>Prix compétitifs sans frais cachés</p>
+              <h3>{{__('messages.tarif_transparents')}}</h3>
+              <p>{{__('messages.tarif_transparents_bellow')}}</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 cus_stories_bx text-center">
@@ -112,8 +112,8 @@
               <div class="cus_pro_img">
                 <img src="assets/images/service_support.svg">
               </div>
-              <h3>Service support</h3>
-              <p>Une équipe après-vente disponible 7j/7</p>
+              <h3>{{__('messages.service_support')}}</h3>
+              <p>{{__('messages.service_support_bellow')}}</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-12 cus_stories_bx text-center">
@@ -121,8 +121,8 @@
               <div class="cus_pro_img">
                 <img src="assets/images/visibilite_maximale.svg">
               </div>
-              <h3>Visibilité maximale</h3>
-              <p>Augmentez la visibilité grâce à nos campagnes</p>
+              <h3>{{__('messages.visibility')}}</h3>
+              <p>{{__('messages.visibility_bellow')}}</p>
             </div>
           </div>
 

@@ -57,13 +57,13 @@
 @yield('content')
 
 <!-- Custom Modal for Google Translate -->
-<div id="translateModal" class="translate-modal">
+{{-- <div id="translateModal" class="translate-modal">
     <div class="translate-modal-content">
         <span class="close-btn" onclick="closeTranslatePopup()">&times;</span>
         <h3>Select Language</h3>
         <div id="google_translate_element_popup"></div>
     </div>
-</div>
+</div> --}}
 
 
 @include('layouts.footer')
@@ -107,7 +107,7 @@
 
 
   </script>
-<div id="google_translate_element"></div>
+{{-- <div id="google_translate_element"></div>
 
 <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -141,7 +141,7 @@ function changeLanguage(lang) {
     } else {
         console.error("Google Translate dropdown not found.");
     }
-}
+} --}}
 
 </script>
 

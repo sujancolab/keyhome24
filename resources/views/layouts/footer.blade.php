@@ -11,7 +11,7 @@
               <div class="ft_logo mb-3">
                 <img class="ft_logo_img" src="assets/images/footer_logo.png" alt="" />
               </div>
-              <p>Votre partenaire de confiance pour trouver le bien immobilier de vos rêves.</p>
+              <p>{{ __('messages.footer_title') }}</p>
               <div class="footer_social">
                 <div class="header_social_area">
                 <ul>
@@ -49,7 +49,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="footer_box">
-            <h2 class="ft_heading">Contact</h2>
+            <h2 class="ft_heading">{{ __('messages.contact') }}</h2>
             <div class="ft_contact">
               <p><a href="mailto:info@keyhome24.com"><i class="fa fa-envelope-o me-1" aria-hidden="true"></i> info@keyhome24.com</a></p>
             </div>
@@ -60,9 +60,9 @@
             <h2 class="ft_heading">Liens Rapides</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="{{route('rent-buy')}}">Rechercher</a></li>
-                <li><a href="{{route('share-accommodation')}}">Demandes</a></li>
-                <li><a href="{{url('/')}}">Espace utilisateur</a></li>
+                <li><a href="{{route('rent-buy')}}">{{ __('messages.properties') }}</a></li>
+                <li><a href="{{route('share-accommodation')}}">{{ __('messages.requests') }}</a></li>
+                <li><a href="{{url('/')}}">{{ __('messages.home') }}</a></li>
               </ul>
             </div>
           </div>
@@ -72,9 +72,9 @@
             <h2 class="ft_heading">Liens légaux</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="{{url('/general-conditions')}}">Conditions générales</a></li>
-                <li><a href="{{url('/privacy')}}">Data Protection</a></li>
-                <li><a href="{{url('/legal')}}">Legal Notices</a></li>
+                <li><a href="{{url('/general-conditions')}}">{{ __('messages.terms_condition') }}</a></li>
+                <li><a href="{{url('/privacy')}}">{{ __('messages.data_protecttion') }}</a></li>
+                <li><a href="{{url('/legal')}}">{{ __('messages.legal_notice') }}</a></li>
               </ul>
             </div>
           </div>
