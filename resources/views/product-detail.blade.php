@@ -5,24 +5,24 @@
 <section class="property_details_top_sec">
     <div class="container">
         <div class="back_to_result">
-            <a href="javascript::void(0)" onclick="window.history.back();"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a>
+            <a href="javascript::void(0)" onclick="window.history.back();"><i class="fa fa-angle-left" aria-hidden="true"></i> {{__t('Link_back')}}</a>
         </div>
         <!--  -->
         <div class="slider_name">
             <div class="slider_name_left">
-                <h3>{{$post->property_type}} {{$post->rooms}} rooms, {{$post->surface_area}} m²</h3>
+                <h3>{{$post->property_type}} {{$post->rooms}} {{__t('Titel_text_Rooms')}}, {{$post->surface_area}} m²</h3>
                 <p>
                     <img src="images/location_icon.svg" alt="" />
-                    {{$post->user->name}},{{$post->postal_code}} , {{$post->address_property}} 
+                    {{$post->user->name}},{{$post->postal_code}} , {{$post->address_property}}
                 </p>
             </div>
             <div class="slider_name_right d-flex">
                 <h4>{{$post->price}} CHF</h4>
                 <div class="list_social_action">
                     <a class="btn_social_action btn_to_call" href="tel:{{$post->phone}}">
-                    <img src="{{ asset('assets/images/call_icon.svg') }}" alt="" /> Call</a>
-                    <a class="btn_social_action btn_to_mail" href="javascript:void(0)" onclick="openInMaps('{{$post->address}}')"><img src="{{ asset('assets/images/navigation_icon.svg') }}" alt="" /> Itinerary</a>
-                    <a class="btn_social_action btn_to_share" href="javascript:void(0)" onclick="shareContent()"><img src="{{ asset('assets/images/share_icon.svg') }}" alt="" /> Share</a>
+                    <img src="{{ asset('assets/images/call_icon.svg') }}" alt="" /> {{__t('Bouton_Call')}}</a>
+                    <a class="btn_social_action btn_to_mail" href="javascript:void(0)" onclick="openInMaps('{{$post->address}}')"><img src="{{ asset('assets/images/navigation_icon.svg') }}" alt="" /> {{__t('Bouton_Itinerary')}}</a>
+                    <a class="btn_social_action btn_to_share" href="javascript:void(0)" onclick="shareContent()"><img src="{{ asset('assets/images/share_icon.svg') }}" alt="" /> {{__t('Bouton_Share')}}</a>
                 </div>
             </div>
         </div>
@@ -41,8 +41,8 @@
 
                     <div class="item">
                         <div class="owl_img">
-                          <img class="preview_image" src="{{url('storage/'.$photo)}}" alt="" /> 
-                          <a href="{{url('storage/'.$photo)}}" class="thumbnail wp_site_gallery"><i class="fa fa-search" aria-hidden="true"></i></a> 
+                          <img class="preview_image" src="{{url('storage/'.$photo)}}" alt="" />
+                          <a href="{{url('storage/'.$photo)}}" class="thumbnail wp_site_gallery"><i class="fa fa-search" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     @endforeach
@@ -77,13 +77,13 @@
                     <div class="feature_summry_bx">
                         <img src="{{ asset('assets/images/feature_building.svg') }}" alt="" />
                         <h4>{{$post->floor}}</h4>
-                        <p class="mb-0">Floor</p>
+                        <p class="mb-0">{{__t('propertyDetailFloor')}}</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="form_vidget bx_shadow_comman">
-            <h4 class="tab_title mb-4">Description</h4>
+            <h4 class="tab_title mb-4">{{__t('propertyDetailDescription')}}</h4>
             <div class="row">
                 <div class="col-md-12">
                     <p class="post_description">
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div class="form_vidget bx_shadow_comman">
-            <h4 class="tab_title mb-4">Equipment</h4>
+            <h4 class="tab_title mb-4">{{__t('propertyDetailEquipement')}}</h4>
             <div class="row">
                 <div class="col-md-12">
                     <ul class="list_style_feat">
@@ -127,7 +127,7 @@
         <!--</div>-->
 
         <div class="form_vidget bx_shadow_comman">
-            <h4 class="tab_title mb-4">Advertiser</h4>
+            <h4 class="tab_title mb-4">{{__t('propertyDetailAdvertiser')}}</h4>
             <div class="row">
                 <div class="col-md-12">
                     <p>{{$post->agency_name}}</p>
@@ -137,7 +137,7 @@
                     <p>{{$post->email}}</p>
                     <p>{{$post->phone}}</p>
                     <div class="pro_overview_cotact">
-                      <a class="contaic_mail_btn border_btn" href="mailto:testmail.com"><img src="{{ asset('assets/images/mail_icon_red.svg') }}" alt="" /> Contact by email</a>
+                      <a class="contaic_mail_btn border_btn" href="mailto:testmail.com"><img src="{{ asset('assets/images/mail_icon_red.svg') }}" alt="" /> {{__t('propertyDetailContactByemail')}}</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@ function openInMaps(address) {
 <script>
 	// For Gallery
 		$(function(){
-			
+
 			$('.wp_site_gallery').viewbox();
 			//$('.thumbnail-2').viewbox();
 
@@ -240,10 +240,10 @@ function openInMaps(address) {
 					vb.trigger('viewbox.close');
 				});
 			})();
-			
+
 		});
-	
-  
+
+
 	</script>
 @endsection
 </div>

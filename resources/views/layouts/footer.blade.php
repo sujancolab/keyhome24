@@ -11,7 +11,7 @@
               <div class="ft_logo mb-3">
                 <img class="ft_logo_img" src="assets/images/footer_logo.png" alt="" />
               </div>
-              <p>{{ __('messages.footer_title') }}</p>
+              <p>{{ __t('footerDescription') }}</p>
               <div class="footer_social">
                 <div class="header_social_area">
                 <ul>
@@ -49,7 +49,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="footer_box">
-            <h2 class="ft_heading">{{ __('messages.contact') }}</h2>
+            <h2 class="ft_heading">{{ __t('footerContact') }}</h2>
             <div class="ft_contact">
               <p><a href="mailto:info@keyhome24.com"><i class="fa fa-envelope-o me-1" aria-hidden="true"></i> info@keyhome24.com</a></p>
             </div>
@@ -57,24 +57,24 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="footer_box">
-            <h2 class="ft_heading">Liens Rapides</h2>
+            <h2 class="ft_heading">{{__('footerQuickLink')}}</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="{{route('rent-buy')}}">{{ __('messages.properties') }}</a></li>
-                <li><a href="{{route('share-accommodation')}}">{{ __('messages.requests') }}</a></li>
-                <li><a href="{{url('/')}}">{{ __('messages.home') }}</a></li>
+                <li><a href="{{route('rent-buy')}}">{{ __t('footerQuickLinkSearch_Properties') }}</a></li>
+                <li><a href="{{route('share-accommodation')}}">{{ __t('footerQuickLinkAuth_Requests') }}</a></li>
+                <li><a href="{{url('/')}}">{{ __t('footerQuickLinkAuth_UserSpace') }}</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12">
           <div class="footer_box">
-            <h2 class="ft_heading">Liens légaux</h2>
+            <h2 class="ft_heading">{{__t('footerLegalLink')}}</h2>
             <div class="ft_links">
               <ul class="">
-                <li><a href="{{url('/general-conditions')}}">{{ __('messages.terms_condition') }}</a></li>
-                <li><a href="{{url('/privacy')}}">{{ __('messages.data_protecttion') }}</a></li>
-                <li><a href="{{url('/legal')}}">{{ __('messages.legal_notice') }}</a></li>
+                <li><a href="{{url('/general-conditions')}}">{{ __t('footerLegalLinkTerms') }}</a></li>
+                <li><a href="{{url('/privacy')}}">{{ __t('footerLegalLinkPrivacy') }}</a></li>
+                <li><a href="{{url('/legal')}}">{{ __t('footerLegalLinkImprint') }}</a></li>
               </ul>
             </div>
           </div>
@@ -91,7 +91,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="footer_copy text-center">
-            <p>© 2025 KeyHome24. Tous droits réservés.</p>
+            <p>© 2025 KeyHome24. {{__t('footerAllRights')}}.</p>
           </div>
         </div>
 

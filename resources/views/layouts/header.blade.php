@@ -35,7 +35,7 @@
                                     aria-hidden="true"></i>{{__t('navbarPropertiesButton') }} </a></li>
                         <li><a href="{{ route('share-accommodation') }}"><img
                                     src="{{ asset('assets/images/search_con_nav.svg') }}" alt="" />
-                                {{ __('messages.requests') }} </a>
+                                    {{__t('navbarRequestsButton') }} </a>
                         </li>
                         <li class="hide_mob" id="language_li">
                             <div class="dropdown">
@@ -81,16 +81,16 @@
                             <li class="header_lgn_btn"><a href="{{ route('dashboard') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                    {{ __('messages.dashboard') }}</a></li>
+                                    {{ __t('navbarConnectionDashboard') }}</a></li>
                             <li class="header_lgn_btn"><a href="{{ route('logout') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                    {{ __('messages.logout') }}</a></li>
+                                    {{ __t('navbarConnectionLogout') }}</a></li>
                         @else
                             <li class="header_lgn_btn"><a href="{{ route('login') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                    {{ __('messages.login') }}</a></li>
+                                    {{ __t('navbarConnectionButton') }}</a></li>
                         @endif
                     </ul>
                 </div>

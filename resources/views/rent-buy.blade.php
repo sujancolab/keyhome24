@@ -3,15 +3,15 @@
     <!-- hero_form_sec -->
     <section class="hero_form_sec text-center py-5-">
         <div class="container">
-            <h1 class="main_form_title text-white head_title">Buy a Property</h1>
+            <h1 class="main_form_title text-white head_title">{{__t('TitelOnPropeties-buy-page')}}</h1>
             <div class="hero_form_area">
                 <div class="home_page_tab_area_only home_page_form_nav">
                     <ul class="" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-title="Buy" data-bs-toggle="pill" href="#tab_buy">{{__('messages.buy')}}</a>
+                            <a class="nav-link active" data-title="Buy" data-bs-toggle="pill" href="#tab_buy">{{__t('SearchBarSelectorBuy')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-title="Rent" data-bs-toggle="pill" href="#tab_rent"> {{__('messages.to_rent_out')}}</a>
+                            <a class="nav-link" data-title="Rent" data-bs-toggle="pill" href="#tab_rent"> {{__t('SearchBarSelectorToRentOut')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -22,7 +22,7 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
-                                            <input type="text" class="form-control location" name="location" placeholder="City or postal code" />
+                                            <input type="text" class="form-control location" name="location" placeholder="{{__t('SearchBarCityOrPostalCode')}}" />
                                             <div class="inp_icon">
                                                 <img src="assets/images/location_icon.svg">
                                             </div>
@@ -31,7 +31,7 @@
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
                                             <select class="custom-select form-control property_type" name="property_type">
-                                                <option value=""> Select Category</option>
+                                                <option value=""> {{__t('SearchBarSelectCategory')}}</option>
                                                  <optgroup label="Residential">
                                                             <option value="apartment">Apartment</option>
                                                             <option value="house">House</option>
@@ -67,7 +67,7 @@
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
                                             <select class="custom-select form-control max_budget" name="max_budget">
-                                                <option disabled selected>Max budget.</option>
+                                                <option disabled selected>{{__t('SearchBarMaxBudget.')}}.</option>
                                                 <!-- Options will be populated dynamically -->
                                             </select>
                                             <div class="inp_icon">
@@ -78,7 +78,7 @@
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
                                             <select class="custom-select form-control rooms" name="rooms">
-                                                <option value="">Rooms</option>
+                                                <option value="">{{__t('SearchBarRooms')}}</option>
                                                 <option value="1">1 - 1.5 rooms</option>
                                                 <option value="2">2 - 2.5 rooms</option>
                                                 <option value="3">3 - 3.5 rooms</option>
@@ -99,7 +99,7 @@
                                 <div class="row">
                                     <div class="col-lg-3 col-sm-6 mb-2 form-group">
                                         <div class="inp_relative">
-                                            <input type="text" class="form-control location" name="location" placeholder="City or postal code" />
+                                            <input type="text" class="form-control location" name="location" placeholder="{{__t('SearchBarCityOrPostalCode')}}" />
                                             <div class="inp_icon">
                                                 <img src="assets/images/location_icon.svg">
                                             </div>
@@ -109,22 +109,28 @@
                                         <div class="inp_relative">
                                             <select class="custom-select form-control property_type" name="property_type">
                                                 <option disabled selected value="">Type of property</option>
-                                                <optgroup label="Residential">
-                                                    <option value="apartment">Apartment</option>
-                                                    <option value="house">House</option>
-                                                    <option value="villa">Villa</option>
-                                                    <option value="studio">Studio</option>
-                                                    <option value="loft">Loft</option>
+                                                <optgroup label="{{__t('SearchBarSelectorResidential')}}">
+                                                    <option value="apartment">{{__t('SearchBarSelectorApartment')}}</option>
+                                                    <option value="house">{{__t('SearchBarSelectorHouse')}}</option>
+                                                    <option value="villa">{{__t('SearchBarSelectorVilla')}}</option>
+                                                    <option value="studio">{{__t('searchBarSelectorStudio')}}</option>
+                                                    <option value="duplex">{{__t('searchBarSelectorDuplex')}}</option>
+                                                    <option value="chalet">{{__t('searchBarSelectorChalet')}}</option>
+                                                    <option value="loft">{{__t('searchBarSelectorLoft')}}</option>
                                                 </optgroup>
-                                                <optgroup label="Commercial">
-                                                    <option value="office">Office</option>
-                                                    <option value="shop">Shop</option>
-                                                    <option value="restaurant">Restaurant</option>
-                                                    <option value="warehouse">Warehouse</option>
+                                                <optgroup label="{{__t('SearchBarSelectorCommercial')}}">
+                                                    <option value="office">{{__t('SearchBarSelectorOffice')}}</option>
+                                                    <option value="commercial_space">{{__t('SearchBarSelectorCommercialSpace')}}</option>
+                                                    <option value="warehouse">{{__t('SearchBarSelectorWarehouse')}}</option>
+                                                    <option value="factory">{{__t('SearchBarSelectorFactory')}}</option>
+                                                    <option value="farm">{{__t('SearchBarSelectorFarm')}}</option>
                                                 </optgroup>
-                                                <optgroup label="Land">
-                                                    <option value="building_land">Building Plot</option>
-                                                    <option value="agricultural_land">Agricultural Land</option>
+                                                <optgroup label="{{__t('SearchBarSelectorLand')}}">
+                                                    <option value="building_land">{{__t('SearchBarSelectorBuildingPlot')}}</option>
+                                                    <option value="agricultural_land">{{__t('SearchBarSelectorAgriculturalLand')}}</option>
+                                                    <option value="parking">{{__t('SearchBarSelectorParking')}}</option>
+                                                    <option value="garage">{{__t('SearchBarSelectorGarage')}}</option>
+                                                    <option value="parking_lot">{{__t('SearchBarSelectorParkingLot')}}</option>
                                                 </optgroup>
                                             </select>
                                             <div class="inp_icon">
@@ -171,12 +177,12 @@
     <section class="properties_sec comman_tb_padding">
         <div class="container">
             <div class="property_result_title two_column_title">
-                <h2 class="mb-0">{{ count($posts) }} {{__('messages.announcement')}} </h2>
+                <h2 class="mb-0">{{ count($posts) }} {{__t('Text_announcement')}} </h2>
                 <div class="property_select">
                     <select class="custom-select form-control">
-                        <option value="most_recent">Most Recent</option>
-                        <option value="price_asc">Ascending price</option>
-                        <option value="price_desc">Descending price</option>
+                        <option value="most_recent">{{__t('protertyGridMostRecent')}}</option>
+                        <option value="price_asc">{{__t('protertyGridPriceDescending')}}</option>
+                        <option value="price_desc">{{__t('protertyGridPriceAscending')}}</option>
                     </select>
                 </div>
             </div>
@@ -225,7 +231,7 @@
         // Define setTitle in global scope
         function setTitle(title) {
             if (title == "Rent") {
-                $(".head_title").text("Rent a property");
+                $(".head_title").text("{{__t('TitelOnPropeties-rent-page')}}");
                 // Set max budget options for Rent
                 $('.max_budget').html(`
                     <option disabled selected>Max budget.</option>
@@ -244,7 +250,7 @@
                     <option value="10001">More than 10,000 CHF/month</option>
                 `);
             } else {
-                $(".head_title").text("Buy a property");
+                $(".head_title").text("{{__t('TitelOnPropeties-buy-page')}}");
                 // Set max budget options for Buy
                 $('.max_budget').html(`
                     <option disabled selected>Max budget.</option>
