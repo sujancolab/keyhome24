@@ -17,23 +17,25 @@
                                     <span class="selected-lang">French</span>
                                 </div>
                                 <div class="dropdown-menu">
+
                                     <div data-lang="French">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}"> French</a>
+                                        <a href="{{ route('change.language', 'fr') }}"> French</a>
                                     </div>
                                     <div data-lang="German" onclick="openTranslatePopup('fr')">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}"> German</a>
+                                        <a href="{{ route('change.language', 'de') }}"> German</a>
                                     </div>
                                     <div data-lang="Italian" onclick="openTranslatePopup('fr')">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'it']) }}"> Italian</a>
+                                        <a href="{{ route('change.language', 'it') }}"> Italian</a>
                                     </div>
 
                                 </div>
                             </div>
                         </li>
                         <li class="active-"><a href="{{ route('rent-buy') }}"><i class="fa fa-building-o me-1"
-                                    aria-hidden="true"></i> {{ __('messages.properties') }} </a></li>
+                                    aria-hidden="true"></i>{{__t('navbarPropertiesButton') }} </a></li>
                         <li><a href="{{ route('share-accommodation') }}"><img
-                                    src="{{ asset('assets/images/search_con_nav.svg') }}" alt="" /> {{ __('messages.requests') }} </a>
+                                    src="{{ asset('assets/images/search_con_nav.svg') }}" alt="" />
+                                {{ __('messages.requests') }} </a>
                         </li>
                         <li class="hide_mob" id="language_li">
                             <div class="dropdown">
@@ -43,13 +45,13 @@
                                 </div>
                                 <div class="dropdown-menu">
                                     <div data-lang="French">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}"> French</a>
+                                        <a href="{{ route('change.language', 'fr') }}"> French</a>
                                     </div>
                                     <div data-lang="German" onclick="openTranslatePopup('fr')">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}"> German</a>
+                                        <a href="{{ route('change.language', 'de') }}"> German</a>
                                     </div>
                                     <div data-lang="Italian" onclick="openTranslatePopup('fr')">
-                                        <a href="{{ request()->fullUrlWithQuery(['lang' => 'it']) }}"> Italian</a>
+                                        <a href="{{ route('change.language', 'it') }}"> Italian</a>
                                     </div>
 
                                 </div>
@@ -79,16 +81,16 @@
                             <li class="header_lgn_btn"><a href="{{ route('dashboard') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                            {{ __('messages.dashboard') }}</a></li>
+                                    {{ __('messages.dashboard') }}</a></li>
                             <li class="header_lgn_btn"><a href="{{ route('logout') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                            {{ __('messages.logout') }}</a></li>
+                                    {{ __('messages.logout') }}</a></li>
                         @else
                             <li class="header_lgn_btn"><a href="{{ route('login') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                            {{ __('messages.login') }}</a></li>
+                                    {{ __('messages.login') }}</a></li>
                         @endif
                     </ul>
                 </div>
@@ -96,4 +98,3 @@
         </div>
     </div>
 </nav>
-

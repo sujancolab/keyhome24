@@ -4,11 +4,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TranslationController;
 use App\Http\Middleware\AdminAuthCheck;
 use App\Http\Middleware\AuthCheck;
 use App\Http\Middleware\LanguageSwitcher;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 Route::get('/', [IndexController::class, 'index'])->middleware([LanguageSwitcher::class])->name('home');
@@ -45,20 +48,28 @@ Route::get('/api/filter-requests', [IndexController::class, 'filterRequests']);
 Route::get('/api/filter-posts', [IndexController::class, 'filterPosts']);
 
 //admin
-Route::prefix('/admin')->group(function(){
-    Route::get('/login',[AdminController::class,'login'])->name('admin.login');
-    Route::post('/login',[AdminController::class,'loginPost'])->name('admin.login.post');
-    Route::middleware([AdminAuthCheck::class])->group(function(){
-        Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
-        Route::get('/posts',[AdminController::class,'posts'])->name('admin.posts');
-        Route::get('/requests',[AdminController::class,'requests'])->name('admin.requests');
-        Route::get('/users',[AdminController::class,'users'])->name('admin.users');
+Route::prefix('/admin')->group(function () {
+    Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+    Route::post('/login', [AdminController::class, 'loginPost'])->name('admin.login.post');
+    Route::middleware([AdminAuthCheck::class])->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/posts', [AdminController::class, 'posts'])->name('admin.posts');
+        Route::get('/requests', [AdminController::class, 'requests'])->name('admin.requests');
+        Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+        Route::get('/translations', [TranslationController::class, 'index'])->name('translations.index');
+        Route::post('/translations', [TranslationController::class, 'store'])->name('translations.store');
+        Route::get('/translations/{id}/edit', [TranslationController::class, 'edit'])->name('translations.edit');
+        Route::post('/translations/{id}', [TranslationController::class, 'update'])->name('translations.update');
+        Route::delete('/translations/{id}', [TranslationController::class, 'destroy'])->name('translations.destroy');
     });
-
-
 });
 
-
+Route::get('/change-language/{lang}', function ($lang) {
+    Session::put('locale', $lang);
+    App::setLocale($lang);
+    // echo("Locale set to: " . App::getLocale() . " (Session: " . Session::get('locale') . ")");die();
+    return redirect()->back();
+})->name('change.language');
 // Route::middleware(['lang'])->group(function () {
 //     Route::get('/', [IndexController::class, 'index'])->name('home');
 //     Route::get('/rent-buy', [IndexController::class, 'rentBuy'])->name('rent-buy');

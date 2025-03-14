@@ -40,7 +40,7 @@
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="{{route('translations.index')}}">
               <i class="bi bi-circle"></i><span>Translation</span>
             </a>
           </li>
