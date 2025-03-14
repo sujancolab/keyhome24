@@ -1,6 +1,15 @@
 @extends('admin.layouts.layouts')
 @section('content')
-
+<style>
+      #editor-container {
+            height: 300px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+</style>
 <div class="pagetitle">
     <h1>Translations</h1>
     <nav>
@@ -33,8 +42,40 @@
                                     <option value="it">Italian</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
-                                <input type="text" name="value" class="form-control" placeholder="Translation Value" required>
+                            <div class="col-md-12 my-5">
+                                {{-- <input type="text" id="editor" name="value" class="form-control" placeholder="Translation Value" required> --}}
+                                <div id="toolbar-container">
+                                    <span class="ql-formats">
+                                        <select class="ql-font"></select>
+                                        <select class="ql-size"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-bold"></button>
+                                        <button class="ql-italic"></button>
+                                        <button class="ql-underline"></button>
+                                        <button class="ql-strike"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <select class="ql-color"></select>
+                                        <select class="ql-background"></select>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-list" value="ordered"></button>
+                                        <button class="ql-list" value="bullet"></button>
+                                        <button class="ql-indent" value="-1"></button>
+                                        <button class="ql-indent" value="+1"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-link"></button>
+                                        <button class="ql-image"></button>
+                                        <button class="ql-video"></button>
+                                    </span>
+                                    <span class="ql-formats">
+                                        <button class="ql-clean"></button>
+                                    </span>
+                                </div>
+                                <div id="editor-container"></div>
+                                <input type="hidden" name="code" id="hidden-input">
                             </div>
                             <div class="col-md-1">
                                 <button type="submit" class="btn btn-primary">Add</button>
@@ -116,8 +157,20 @@
     </form>
   </div>
 </div>
-
 <script>
+   var quill = new Quill('#editor-container', {
+            theme: 'snow',
+            modules: {
+                toolbar: '#toolbar-container'
+            }
+        });
+
+        document.querySelector('form').onsubmit = function() {
+            document.querySelector('#hidden-input').value = quill.root.innerHTML;
+        };
+</script>
+<script>
+
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.edit-translation').forEach(button => {
             button.addEventListener('click', function () {

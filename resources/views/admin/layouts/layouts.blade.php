@@ -28,6 +28,8 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('admin/assets/css/style.css')}}" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
