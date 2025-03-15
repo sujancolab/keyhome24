@@ -38,6 +38,7 @@ class TranslationController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $request->validate([
             'key' => 'required|string',
             'locale' => 'required|string',

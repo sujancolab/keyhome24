@@ -4,6 +4,9 @@
       #editor-container {
             height: 300px;
         }
+        #edit-translation-value {
+            height: 300px;
+        }
         button {
             margin-top: 10px;
             padding: 10px 15px;
@@ -99,7 +102,7 @@
                             <tr>
                                 <td>{{ $translation->key }}</td>
                                 <td>{{ $translation->locale }}</td>
-                                <td>{{ $translation->value }}</td>
+                                <td>{!! $translation->value !!}</td>
                                 <td>
                                     <button class="btn btn-warning btn-sm edit-translation" data-id="{{ $translation->id }}" data-key="{{ $translation->key }}" data-locale="{{ $translation->locale }}" data-value="{{ $translation->value }}">Edit</button>
                                     <form method="POST" action="{{ route('translations.destroy', $translation->id) }}" class="d-inline">
@@ -146,7 +149,39 @@
                 </div>
                 <div class="mb-3">
                     <label>Translation</label>
-                    <input type="text" name="value" id="edit-translation-value" class="form-control" required>
+                    {{-- <input type="text" name="value" id="edit-translation-value" class="form-control" required> --}}
+                    <div id="toolbar-container1">
+                        <span class="ql-formats">
+                            <select class="ql-font"></select>
+                            <select class="ql-size"></select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-strike"></button>
+                        </span>
+                        <span class="ql-formats">
+                            <select class="ql-color"></select>
+                            <select class="ql-background"></select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-list" value="ordered"></button>
+                            <button class="ql-list" value="bullet"></button>
+                            <button class="ql-indent" value="-1"></button>
+                            <button class="ql-indent" value="+1"></button>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-link"></button>
+                            <button class="ql-image"></button>
+                            <button class="ql-video"></button>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-clean"></button>
+                        </span>
+                    </div>
+                    <div id="edit-translation-value"></div>
+                    <input type="hidden" name="value" id="hidden-input1" value="">
                 </div>
             </div>
             <div class="modal-footer">
@@ -168,6 +203,16 @@
         document.querySelector('form').onsubmit = function() {
             document.querySelector('#hidden-input').value = quill.root.innerHTML;
         };
+        var quill1 = new Quill('#edit-translation-value', {
+            theme: 'snow',
+            modules: {
+                toolbar: '#toolbar-container1'
+            }
+        });
+
+        document.querySelector('#editTranslationForm').onsubmit = function() {
+            document.querySelector('#hidden-input1').value = quill1.root.innerHTML;
+        };
 </script>
 <script>
 
@@ -183,7 +228,8 @@
                 document.getElementById('edit-translation-key').value = key;
                 document.getElementById('edit-translation-locale').value = locale;
                 document.getElementById('edit-translation-value').value = value;
-
+                quill1.root.innerHTML=value;
+                document.querySelector('#hidden-input1').value = quill1.root.innerHTML;
                 let form = document.getElementById('editTranslationForm');
                 form.action = `/admin/translations/${id}`;
                 form.querySelector('input[name="_method"]').value = 'POST';
