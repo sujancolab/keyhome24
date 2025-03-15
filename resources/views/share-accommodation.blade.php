@@ -3,18 +3,18 @@
     <!-- hero_form_sec -->
     <section class="hero_form_sec for_blue_bg_only text-center py-5-">
         <div class="container">
-            <h1 class="main_form_title text-white">Requests</h1>
+            <h1 class="main_form_title text-white">{{__t('Titre_Requets')}}</h1>
             <div class="hero_form_area">
                 <div class="home_page_tab_area_only home_page_form_nav">
                     <ul class="" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" data-bs-toggle="pill" href="#tab_buy">Colocation</a>
+                            <a class="nav-link active" data-bs-toggle="pill" href="#tab_buy">{{__t('SearchBarTitelColocation')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="pill" href="#tab_rent">Housing</a>
+                            <a class="nav-link" data-bs-toggle="pill" href="#tab_rent">{{__t('SearchBarTitelHousing')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="pill" href="#tab_reprise">Reprise</a>
+                            <a class="nav-link" data-bs-toggle="pill" href="#tab_reprise">{{__t('SearchBarTitelReprise')}}</a>
                         </li>
                     </ul>
                 </div>
@@ -28,7 +28,7 @@
                                             <input type="text"
                                                    class="form-control"
                                                    name="location"
-                                                   placeholder="City or postal code" />
+                                                   placeholder="{{__t('SelectColocationSearchBarCityCodePostale')}}" />
                                             <div class="inp_icon">
                                                 <img src="{{ asset('assets/images/location_icon.svg') }}">
                                             </div>
@@ -37,20 +37,20 @@
                                     <div class="col-lg-4 col-md-4 mb-2 form-group">
                                         <div class="inp_relative">
                                             <select class="custom-select form-control" name="max_budget">
-                                                <option disabled selected>Max budget.</option>
-                                                <option value="500">Up to 500 CHF/month</option>
-                                                <option value="1000">Up to 1,000 CHF/month</option>
-                                                <option value="1500">Up to 1,500 CHF/month</option>
-                                                <option value="2000">Up to 2,000 CHF/month</option>
-                                                <option value="3000">Up to 3,000 CHF/month</option>
-                                                <option value="4000">Up to 4,000 CHF/month</option>
-                                                <option value="5000">Up to 5,000 CHF/month</option>
-                                                <option value="6000">Up to 6,000 CHF/month</option>
-                                                <option value="7000">Up to 7,000 CHF/month</option>
-                                                <option value="8000">Up to 8,000 CHF/month</option>
-                                                <option value="9000">Up to 9,000 CHF/month</option>
-                                                <option value="10000">Up to 10,000 CHF/month</option>
-                                                <option value="10001">More than 10,000 CHF/month</option>
+                                                <option disabled selected>{{__t('SelectColocationSearchBarMaxBudget.')}}.</option>
+                                                <option value="500">Up to 500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1000">Up to 1,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1500">Up to 1,500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="2000">Up to 2,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="3000">Up to 3,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="4000">Up to 4,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="5000">Up to 5,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="6000">Up to 6,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="7000">Up to 7,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="8000">Up to 8,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="9000">Up to 9,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10000">Up to 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10001">More than 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
                                             </select>
                                             <div class="inp_icon">
                                                 <img src="{{ asset('assets/images/money_bag.svg') }}">
@@ -88,19 +88,19 @@
                                         <div class="inp_relative">
                                             <select class="custom-select form-control" name="max_budget">
                                                 <option disabled selected>Max budget.</option>
-                                                <option value="500">Up to 500 CHF/month</option>
-                                                <option value="1000">Up to 1,000 CHF/month</option>
-                                                <option value="1500">Up to 1,500 CHF/month</option>
-                                                <option value="2000">Up to 2,000 CHF/month</option>
-                                                <option value="3000">Up to 3,000 CHF/month</option>
-                                                <option value="4000">Up to 4,000 CHF/month</option>
-                                                <option value="5000">Up to 5,000 CHF/month</option>
-                                                <option value="6000">Up to 6,000 CHF/month</option>
-                                                <option value="7000">Up to 7,000 CHF/month</option>
-                                                <option value="8000">Up to 8,000 CHF/month</option>
-                                                <option value="9000">Up to 9,000 CHF/month</option>
-                                                <option value="10000">Up to 10,000 CHF/month</option>
-                                                <option value="10001">More than 10,000 CHF/month</option>
+                                                <option value="500">Up to 500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1000">Up to 1,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1500">Up to 1,500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="2000">Up to 2,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="3000">Up to 3,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="4000">Up to 4,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="5000">Up to 5,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="6000">Up to 6,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="7000">Up to 7,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="8000">Up to 8,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="9000">Up to 9,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10000">Up to 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10001">More than 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
                                             </select>
                                             <div class="inp_icon">
                                                 <img src="{{ asset('assets/images/money_bag.svg') }}">
@@ -138,19 +138,19 @@
                                         <div class="inp_relative">
                                             <select class="custom-select form-control" name="max_budget">
                                                 <option disabled selected>Max budget.</option>
-                                                <option value="500">Up to 500 CHF/month</option>
-                                                <option value="1000">Up to 1,000 CHF/month</option>
-                                                <option value="1500">Up to 1,500 CHF/month</option>
-                                                <option value="2000">Up to 2,000 CHF/month</option>
-                                                <option value="3000">Up to 3,000 CHF/month</option>
-                                                <option value="4000">Up to 4,000 CHF/month</option>
-                                                <option value="5000">Up to 5,000 CHF/month</option>
-                                                <option value="6000">Up to 6,000 CHF/month</option>
-                                                <option value="7000">Up to 7,000 CHF/month</option>
-                                                <option value="8000">Up to 8,000 CHF/month</option>
-                                                <option value="9000">Up to 9,000 CHF/month</option>
-                                                <option value="10000">Up to 10,000 CHF/month</option>
-                                                <option value="10001">More than 10,000 CHF/month</option>
+                                                <option value="500">Up to 500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1000">Up to 1,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="1500">Up to 1,500 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="2000">Up to 2,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="3000">Up to 3,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="4000">Up to 4,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="5000">Up to 5,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="6000">Up to 6,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="7000">Up to 7,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="8000">Up to 8,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="9000">Up to 9,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10000">Up to 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
+                                                <option value="10001">More than 10,000 {{__t('DetailTitelOnColocationMonth')}}</option>
                                             </select>
                                             <div class="inp_icon">
                                                 <img src="{{ asset('assets/images/money_bag.svg') }}">
@@ -182,9 +182,9 @@
                 <h2 class="mb-0">{{ $requests->total() }} Demandes</h2>
                 <div class="">
                     <select class="custom-select form-control">
-                        <option value="most_recent">Most Recent</option>
-                        <option value="price_asc">Ascending price</option>
-                        <option value="price_desc">Descending price</option>
+                        <option value="most_recent">{{__t('protertyGridMostRecent')}}</option>
+                        <option value="price_asc">{{__t('protertyGridPriceAscending')}}</option>
+                        <option value="price_desc">{{__t('protertyGridPriceDescending')}}</option>
                     </select>
                 </div>
             </div>
@@ -192,20 +192,20 @@
             <div class="latest_new_area comman_top">
                 @foreach ($requests as $request)
                     <div class="full_property_listing_repeat">
-                        <h3>Request for shared accommodation - {{ $request->search_type }} <span
+                        <h3>Request for {{__t('DetailTitelOnColocationAnocement')}} - {{ $request->search_type }} <span
                                 class="pro_status_btn">Active</span></h3>
                         <ul class="list_full_property list-inline">
                             <li>Crake</li>
                             <li>Geneva</li>
-                            <li> {{ $request->max_budget }} CHF/month</li>
-                            <li>Shared accommodation</li>
-                            <li>From {{ $request->created_at }}</li>
+                            <li> {{ $request->max_budget }} {{__t('DetailTitelOnColocationMonth')}}</li>
+                            <li>{{__t('DetailTitelOnColocationAnocement')}}</li>
+                            <li>{{__t('DetailTitelOnColocationDate')}}</li>
                         </ul>
                         <p class="ft_weight">{{ $request->search }}</p>
                         <div class="list_call_action">
-                            <a class="btn_list_action btn_to_call" href="tel:{{ $request->phone }}">Call</a>
-                            <a class="btn_list_action btn_to_mail" href="mailto:{{ $request->email }}">E-mail</a>
-                            <a class="btn_list_action btn_to_share" href="tel:{{ $request->phone }}">Share</a>
+                            <a class="btn_list_action btn_to_call" href="tel:{{ $request->phone }}">{{__t('ButtonOnColocationToCall')}}</a>
+                            <a class="btn_list_action btn_to_mail" href="mailto:{{ $request->email }}">{{__t('ButtonOnColocationEMail')}}</a>
+                            <a class="btn_list_action btn_to_share" href="tel:{{ $request->phone }}">{{__t('ButtonOnColocationShare')}}</a>
                         </div>
                     </div>
                 @endforeach
@@ -285,7 +285,7 @@
                                     <ul class="list_full_property list-inline">
                                         <li>${request.location}</li>
                                         <li>${request.city}</li>
-                                        <li>${request.max_budget} CHF/month</li>
+                                        <li>${request.max_budget} {{__t('DetailTitelOnColocationMonth')}}</li>
                                         <li>Shared accommodation</li>
                                         <li>From ${request.created_at}</li>
                                     </ul>

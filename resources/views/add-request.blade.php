@@ -43,7 +43,7 @@
         <div class="col-md-9">
           <!-- My Ads Section -->
           <div class="card white_widget_card mb-4">
-            <h5 class="mb-3 title_5">Post an ad</h5>
+            <h5 class="mb-3 title_5">{{__t('Titre_Requets')}}</h5>
             <div class="multistep_area">
               <div class="wizard_header">
                 <nav class="nav nav-pills nav-fill">
@@ -57,7 +57,7 @@
                     <div class="wizard_icon">
                       <i class="fa fa-list-alt" aria-hidden="true"></i>
                     </div>
-                    <div class="wizard_name">Details</div>
+                    <div class="wizard_name">{{__t('formStepName1')}}</div>
                   </a>
                   {{-- <a class="nav-link tab-pills" href="#">
                     <div class="wizard_icon">
@@ -69,13 +69,13 @@
                     <div class="wizard_icon">
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </div>
-                    <div class="wizard_name">Preview</div>
+                    <div class="wizard_name">{{__t('formStepName2')}}</div>
                   </a>
                   <a class="nav-link tab-pills" href="#">
                     <div class="wizard_icon">
                       <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
                     </div>
-                    <div class="wizard_name">Publication</div>
+                    <div class="wizard_name">{{__t('formStepName3')}}</div>
                   </a>
                 </nav>
               </div>
@@ -116,7 +116,7 @@
                           <label class="radio_card_style">
                             <input type="radio" name="search_type" value="rental" />
                             <div class="card p-3 text-center">
-                              <h5 class="card-title">Rental</h5>
+                              <h5 class="card-title">{{__t('formStepName1')}}</h5>
                             </div>
                           </label>
                         </div>
@@ -124,7 +124,7 @@
                           <label class="radio_card_style">
                             <input type="radio" name="search_type" value="shared_accommodation" />
                             <div class="card p-3 text-center">
-                              <h5 class="card-title">Shared Accommodation</h5>
+                              <h5 class="card-title">{{__t('formStepName2')}}</h5>
                             </div>
                           </label>
                         </div>
@@ -132,7 +132,7 @@
                             <label class="radio_card_style">
                               <input type="radio" name="search_type" value="recovery" />
                               <div class="card p-3 text-center">
-                                <h5 class="card-title">Recovery</h5>
+                                <h5 class="card-title">{{'formStepName3'}}</h5>
                               </div>
                             </label>
                           </div>
@@ -142,8 +142,8 @@
                       {{-- <h4 class="tab_title mb-4">Title of your search *</h4> --}}
                       <div class="row">
                         <div class="col-lg-12 mb-3 form-group">
-                          <label class="form-label">Title of your search <span class="mandatory">*</span></label>
-                          <input type="text" class="form-control" name="search" placeholder="Title Of Search" required />
+                          <label class="form-label">{{__t('formStepNameSearch')}} <span class="mandatory">*</span></label>
+                          <input type="text" class="form-control" name="search" placeholder="{{__t('formStepNameSearchPlaceholder')}}" required />
                         </div>
                       </div>
                     </div>
@@ -175,40 +175,40 @@
                       </div>
                     </div> --}}
                     <div class="form_vidget">
-                      <h4 class="tab_title mb-4">Location *</h4>
+                      <h4 class="tab_title mb-4">{{__t('formStepLocation')}} *</h4>
                       <div class="row">
                         <div class="col-lg-6 col-md-6 mb-3 form-group">
-                          <label class="form-label">NPA <span class="mandatory">*</span></label>
+                          <label class="form-label">{{__t('formStepNPA')}} <span class="mandatory">*</span></label>
                           <input type="text" class="form-control" name="npa" placeholder="Location" required />
                         </div>
                         <div class="col-lg-6 col-md-6 mb-3 form-group">
-                          <label class="form-label">City <span class="mandatory">*</span></label>
+                          <label class="form-label">{{__t('formStepCity')}} <span class="mandatory">*</span></label>
                           <input type="text" class="form-control" name="city" placeholder="City" required />
                         </div>
                         <div class="col-lg-12 col-md-12 mb-3 form-group">
-                          <label class="form-label">Maximum budget <span class="mandatory">*</span></label>
+                          <label class="form-label">{{__t('formStepmaxbudget')}} <span class="mandatory">*</span></label>
                           <input type="number" class="form-control" name="max_budget" placeholder="0" required />
                         </div>
                         <div class="col-lg-12 mb-3 form-group">
-                            <label class="form-label">Description of your search <span class="mandatory">*</span></label>
+                            <label class="form-label">{{__t('formStepDescription')}} <span class="mandatory">*</span></label>
                             <textarea class="form-control" name="description" style="height: 100px" placeholder="Describe your property in detail..."></textarea>
                           </div>
 
                       </div>
                     </div>
                     <div class="form_vidget">
-                        <h4 class="tab_title mb-4">Contact information *</h4>
+                        <h4 class="tab_title mb-4">{{__t('formStepContactInfo')}} *</h4>
                         <div class="row">
                           <div class="col-lg-4 col-md-4 mb-3 form-group">
-                            <label class="form-label">Full name <span class="mandatory">*</span></label>
+                            <label class="form-label">{{__t('formStepFullName')}} <span class="mandatory">*</span></label>
                             <input type="text" class="form-control" name="full_name" placeholder="Full Name" required />
                           </div>
                           <div class="col-lg-4 col-md-4 mb-3 form-group">
-                            <label class="form-label">Email <span class="mandatory">*</span></label>
+                            <label class="form-label">{{__t('formStepEmail')}} <span class="mandatory">*</span></label>
                             <input type="email" class="form-control" name="email" placeholder="Email" required />
                           </div>
                           <div class="col-lg-4 col-md-4 mb-3 form-group">
-                            <label class="form-label">Phone <span class="mandatory">*</span></label>
+                            <label class="form-label">{{__t('formStepPhone')}} <span class="mandatory">*</span></label>
                             <input type="number" class="form-control" name="phone" placeholder="0123456789" required />
                           </div>
 
@@ -260,7 +260,7 @@
                   <div class="tab d-none">
                     <div class="container mt-5">
                         <div class="card p-4">
-                            <h5 class="fw-bold">Overview of your request</h5>
+                            <h5 class="fw-bold">{{__t('formStepOverviewRequest')}}</h5>
                             <div class="d-flex align-items-center mb-3">
                                 <span class="me-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home h-8 w-8 text-red-600"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
@@ -413,63 +413,54 @@
                     </div> --}}
                   </div>
                   <div class="tab d-none">
-                    <h4 class="tab_title mb-4">Choose your publication duration</h4>
+                    <h4 class="tab_title mb-4">{{__t('formStepName3Titel')}}</h4>
                     <div class="row">
                       <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="pricing-plan">
-                          <h2>Basic</h2>
-                          <p>Ideal for a unique ad</p>
-                          <h5 class="price">29.90 <sub>CHF</sub></h5>
+                          <h2>{{__t('formStepName3TitelBasic')}}</h2>
+                          <p>{{__t('formStepName3TitelBasic Period')}}</p>
+                          <h5 class="price">{{__t('formStepName3TitelBasicPrice')}}</h5>
                           <ul class="list_features_price">
-                            <li>An ad for 30 days</li>
-                            <li>Unlimited HD Photos</li>
-                            <li>Basic Statistics</li>
-                            <li>Email Support</li>
+                            <li>{{__t('formStepName3TitelBasicDescription1')}}</li>
+                            <li>{{__t('formStepName3TitelBasicDescription2')}}</li>
+                            <li>{{__t('formStepName3TitelBasicDescription3')}}</li>
+
                           </ul>
                           <input type="radio" name="publication_duration" value="basic" />
                         </div>
                       </div>
                       <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="pricing-plan">
-                          <h2>Pro</h2>
-                          <p>For Real Estate Agents</p>
-                          <h5 class="price">79.90 <sub>CHF</sub></h5>
+                          <h2>{{__t('formStepName3TitelStandard')}}</h2>
+                          <p>{{__t('formStepName3TitelStandardPeriod')}}</p>
+                          <h5 class="price">{{__t('formStepName3TitelStandardPrice')}}</h5>
                           <ul class="list_features_price">
-                            <li>Up to 5 simultaneous announcements</li>
-                            <li>Unlimited HD Photos</li>
-                            <li>Virtual tour</li>
-                            <li>Advanced Statistics</li>
-                            <li>Premium position</li>
-                            <li>Priority support</li>
+                            <li>{{__t('formStepName3TitelBasicDescription2')}}</li>
+                            <li>{{__t('formStepName3TitelBasicDescription3')}}</li>
                           </ul>
-                          <input type="radio" name="publication_duration" value="pro" />
+                          <input type="radio" name="publication_duration" value="stan" />
                         </div>
                       </div>
                       <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="pricing-plan">
-                          <h2>Premium</h2>
-                          <p>Complete solution for professionals</p>
-                          <h5 class="price">149.90 <sub>CHF</sub></h5>
+                          <h2>{{__t('formStepName3TitelPremium')}}</h2>
+                          <p>{{__t('formStepName3TitelPremiumPeriod')}}</p>
+                          <h5 class="price">{{__t('formStepName3TitelPremiumPrice')}}</h5>
                           <ul class="list_features_price">
-                            <li>Unlimited Ads</li>
-                            <li>HD Photos and Videos</li>
-                            <li>3D Virtual Tour</li>
-                            <li>Detailed statistics</li>
-                            <li>Guaranteed premium position</li>
-                            <li>Dedicated support 7 days a week</li>
-                            <li>Exporting contacts</li>
-                            <li>API available</li>
+                            <li>{{__t('formStepName3TitelPremiumDescription1')}}</li>
+                            <li>{{__t('formStepName3TitelBasicDescription2')}}</li>
+                            <li>{{__t('formStepName3TitelBasicDescription3')}}</li>
                           </ul>
                           <input type="radio" name="publication_duration" value="premium" />
                         </div>
                       </div>
                     </div>
                     <div class="form_vidget mt-3">
-                      <h4 class="tab_title mb-4">Payment Method</h4>
+                      <h4 class="tab_title mb-4">{{__t('formStepName3TitelPayment')}}</h4>
                       <div>
                         <label>
                           <input type="radio" name="payment_method" value="bank_card" />
-                          Bank Card
+                          {{__t('formStepName3TitelBankCardButton')}}
                         </label>
                       </div>
                     </div>
@@ -477,8 +468,8 @@
 
                   <div class="wizard_footer text-end mt-3">
                     <div class="d-flex">
-                      <button type="button" id="back_button" class="btn btn-link" onclick="back()">Back</button>
-                      <button type="button" id="next_button" class="btn btn_comman ms-auto">Submit</button>
+                      <button type="button" id="back_button" class="btn btn-link" onclick="back()">{{__t('formStepName2BackLink')}}</button>
+                      <button type="button" id="next_button" class="btn btn_comman ms-auto">{{__t('formStepName3TitelPayButton')}}</button>
                       {{-- <button type="submit">Save Data</button> --}}
                     </div>
 

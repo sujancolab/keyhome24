@@ -81,11 +81,11 @@
                             <li class="header_lgn_btn"><a href="{{ route('dashboard') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                    {{ __t('navbarConnectionDashboard') }}</a></li>
+                                    {{ __t('navbarDaschboardButton') }}</a></li>
                             <li class="header_lgn_btn"><a href="{{ route('logout') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"
                                             alt="" /></span>
-                                    {{ __t('navbarConnectionLogout') }}</a></li>
+                                    {{ __t('navbarLogoutButton') }}</a></li>
                         @else
                             <li class="header_lgn_btn"><a href="{{ route('login') }}">
                                     <span class=""><img src="{{ asset('assets/images/user_icon.svg') }}"

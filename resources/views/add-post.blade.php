@@ -19,8 +19,8 @@
                         <div class="profile_info">
                             <p><strong>Account Information</strong></p>
                             <p>Email: {{ Auth::user()->email }}</p>
-                            <p>Active ads: {{count($posts)}}</p>
-                            <p>Active requests: {{count($requests)}}</p>
+                            <p>Active ads: {{ count($posts) }}</p>
+                            <p>Active requests: {{ count($requests) }}</p>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                 <div class="col-md-9">
                     <!-- My Ads Section -->
                     <div class="card white_widget_card mb-4">
-                        <h5 class="mb-3 title_5">Post an ad</h5>
+                        <h5 class="mb-3 title_5">{{ __t('FormulTitelPostAnAd') }}</h5>
                         <div class="multistep_area">
                             <div class="wizard_header">
                                 <nav class="nav nav-pills nav-fill">
@@ -37,31 +37,31 @@
                                         <div class="wizard_icon">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wizard_name">Agency</div>
+                                        <div class="wizard_name">{{ __t('formStepName1') }}</div>
                                     </a>
                                     <a class="nav-link tab-pills" href="#">
                                         <div class="wizard_icon">
                                             <i class="fa fa-list-alt" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wizard_name">Details</div>
+                                        <div class="wizard_name">{{ __t('formStepName2') }}</div>
                                     </a>
                                     <a class="nav-link tab-pills" href="#">
                                         <div class="wizard_icon">
                                             <i class="fa fa-picture-o" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wizard_name">Photos</div>
+                                        <div class="wizard_name">{{ __t('formStepName3') }}</div>
                                     </a>
                                     <a class="nav-link tab-pills" href="#">
                                         <div class="wizard_icon">
                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wizard_name">Preview</div>
+                                        <div class="wizard_name">{{ __t('formStepName4') }}</div>
                                     </a>
                                     <a class="nav-link tab-pills" href="#">
                                         <div class="wizard_icon">
                                             <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wizard_name">Publication</div>
+                                        <div class="wizard_name">{{ __t('formStepName5') }}</div>
                                     </a>
                                 </nav>
                             </div>
@@ -70,32 +70,35 @@
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="tab d-none">
-                                        <h4 class="tab_title mb-4">Agency information</h4>
+                                        <h4 class="tab_title mb-4">{{ __t('TtelformStepName1AgencyInformation') }}</h4>
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                <label class="form-label">Agency Name <span
+                                                <label class="form-label">{{ __t('TtelformStepName1Agencyname') }} <span
                                                         class="mandatory">*</span></label>
                                                 <input type="text" class="form-control" name="agency_name"
                                                     placeholder="Real Estate SA" required />
                                             </div>
                                             <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                <label class="form-label">Professional email <span
-                                                        class="mandatory">*</span></label>
+                                                <label class="form-label">{{ __t('TtelformStepName1ProfessionalEmail') }}
+                                                    <span class="mandatory">*</span></label>
                                                 <input type="email" class="form-control" name="email"
                                                     placeholder="contact@agence.ch" required />
                                             </div>
                                             <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                <label class="form-label">Phone <span class="mandatory">*</span></label>
+                                                <label class="form-label">{{ __t('TtelformStepName1Phone') }} <span
+                                                        class="mandatory">*</span></label>
                                                 <input type="text" class="form-control" name="phone"
                                                     placeholder="+41 XX XXX XX XX" required />
                                             </div>
                                             <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                <label class="form-label">Address <span class="mandatory">*</span></label>
+                                                <label class="form-label">{{ __t('TtelformStepName1Address') }} <span
+                                                        class="mandatory">*</span></label>
                                                 <input type="text" class="form-control" name="address"
                                                     placeholder="Station Street 1" required />
                                             </div>
                                             <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                <label class="form-label">Location <span class="mandatory">*</span></label>
+                                                <label class="form-label">{{ __t('TtelformStepName1Location') }} <span
+                                                        class="mandatory">*</span></label>
                                                 <input type="text" class="form-control" name="location"
                                                     placeholder="1000 Lausanne" required />
                                             </div>
@@ -104,13 +107,14 @@
 
                                     <div class="tab d-none">
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Ad Type</h4>
+                                            <h4 class="tab_title mb-4">{{ __t('formStepName2Titler') }}</h4>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label class="radio_card_style">
                                                         <input type="radio" name="ad_type" value="sell" />
                                                         <div class="card p-3 text-center">
-                                                            <h5 class="card-title">Sell</h5>
+                                                            <h5 class="card-title">
+                                                                {{ __t('formStepName2SelectionButtonSell') }}</h5>
                                                         </div>
                                                     </label>
                                                 </div>
@@ -118,18 +122,20 @@
                                                     <label class="radio_card_style">
                                                         <input type="radio" name="ad_type" value="rent" />
                                                         <div class="card p-3 text-center">
-                                                            <h5 class="card-title">To rent out</h5>
+                                                            <h5 class="card-title">
+                                                                {{ __t('formStepName2SelectionButtonToRentOut') }}</h5>
                                                         </div>
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Category and type of property</h4>
+                                            <h4 class="tab_title mb-4">
+                                                {{ __t('formStepName2TitlerCategory and type of propety') }}</h4>
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Category <span
-                                                            class="mandatory">*</span></label>
+                                                    <label class="form-label">{{ __t('formStepName2SectionCategory') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <select class="form-control custom-select" name="category">
                                                         <option value="">Select a category</option>
                                                         <optgroup label="Residential">
@@ -161,67 +167,109 @@
                                                     </select>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Property type <span
+                                                    <label
+                                                        class="form-label">{{ __t('formStepName2SectionTypeOfProperty') }}<span
                                                             class="mandatory">*</span></label>
                                                     <select class="form-control custom-select" name="property_type">
                                                         <option value="">Select a type</option>
-                                                        <optgroup label="Residential">
-                                                            <option value="apartment">Apartment</option>
-                                                            <option value="house">House</option>
-                                                            <option value="villa">Villa</option>
-                                                            <option value="studio">Studio</option>
-                                                            <option value="loft">Loft</option>
+                                                        <optgroup label="{{ __t('SearchBarSelectorResidential') }}">
+                                                            <option value="apartment">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyApartment') }}
+                                                            </option>
+                                                            <option value="house">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyHouse') }}
+                                                            </option>
+                                                            <option value="villa">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyVilla') }}
+                                                            </option>
+                                                            <option value="studio">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyStudio') }}
+                                                            </option>
+                                                            <option value="duplex">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyDuplex') }}
+                                                            </option>
+                                                            <option value="chalet">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyChalet') }}
+                                                            </option>
+                                                            <option value="loft">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyLoft') }}
+                                                            </option>
                                                         </optgroup>
 
-                                                        <optgroup label="Commercial">
-                                                            <option value="office">Office</option>
-                                                            <option value="shop">Shop</option>
-                                                            <option value="restaurant">Restaurant</option>
-                                                            <option value="warehouse">Warehouse</option>
+                                                        <optgroup label="{{ __t('SearchBarSelectorCommercial') }}">
+                                                            <option value="office">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyOffice') }}
+                                                            </option>
+                                                            <option value="comercialspace">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyCommercialSpace') }}
+                                                            </option>
+                                                            <option value="warehouse">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyWarehouse') }}
+                                                            </option>
+                                                            <option value="factory">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyFactory') }}
+                                                            </option>
+                                                            <option value="farm">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyFarm') }}
+                                                            </option>
                                                         </optgroup>
 
-                                                        <optgroup label="Land">
-                                                            <option value="building_land">Building Plot</option>
-                                                            <option value="agricultural_land">Agricultural Land</option>
+                                                        <optgroup
+                                                            label="{{ __t('formStepName2SelectionTypeOfPropertyLand') }}">
+                                                            <option value="building_land">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyBuildingPlot') }}
+                                                            </option>
+                                                            <option value="agricultural_land">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyAgriculturalLand') }}
+                                                            </option>
+                                                        </optgroup>
+                                                        <optgroup label="{{ __t('SearchBarSelectorParking') }}">
+                                                            <option value="garage">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyGarage') }}
+                                                            </option>
+                                                            <option value="parkinglot">
+                                                                {{ __t('formStepName2SelectionTypeOfPropertyParkingLot') }}
+                                                            </option>
                                                         </optgroup>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Price</h4>
+                                            <h4 class="tab_title mb-4">{{ __t('formStepName2TitlerPrice') }}</h4>
                                             <div class="row">
                                                 <div class="col-lg-12 mb-3 form-group">
-                                                    <label class="form-label">Price (CHF) <span
-                                                            class="mandatory">*</span></label>
+                                                    <label
+                                                        class="form-label">{{ __t('formStepName2TitlerPriceSellSelection') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <input type="text" class="form-control" name="price"
                                                         placeholder="0" required />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Location</h4>
+                                            <h4 class="tab_title mb-4">{{ __t('formStepName2TitlerLocation') }}</h4>
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Address <span
-                                                            class="mandatory">*</span></label>
+                                                    <label class="form-label">{{ __t('formStepName2TitlerAddress') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <input type="text" class="form-control" name="address_property"
                                                         placeholder="Street and number" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Postal code <span
-                                                            class="mandatory">*</span></label>
+                                                    <label class="form-label">{{ __t('formStepName2TitlerPostalCode') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <input type="text" class="form-control" name="postal_code"
                                                         placeholder="1000" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">City <span
+                                                    <label class="form-label">{{ __t('formStepName2TitlerCity') }} <span
                                                             class="mandatory">*</span></label>
                                                     <input type="text" class="form-control" name="city"
                                                         placeholder="City" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Canton <span
+                                                    <label class="form-label">{{ __t('formStepName2TitlerCanton') }} <span
                                                             class="mandatory">*</span></label>
                                                     <select class="form-control custom-select" name="canton">
                                                         <option value="">Select a canton</option>
@@ -258,7 +306,7 @@
                                             </div>
                                         </div>
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Features</h4>
+                                            <h4 class="tab_title mb-4">{{ __t('formStepName2TitlerFeatures') }}</h4>
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
                                                     <label class="form-label">Surface area (m²) <span
@@ -267,40 +315,81 @@
                                                         placeholder="0" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Number of rooms <span
-                                                            class="mandatory">*</span></label>
+                                                    <label
+                                                        class="form-label">{{ __t('formStepName2TitlerNumberOfRooms') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <input type="number" class="form-control" name="rooms"
                                                         placeholder="0" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Bathrooms <span
-                                                            class="mandatory">*</span></label>
+                                                    <label class="form-label">{{ __t('formStepName2TitlerBathromms') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <input type="number" class="form-control" name="bathrooms"
                                                         placeholder="0" required />
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 mb-3 form-group">
-                                                    <label class="form-label">Floor <span
+                                                    <label class="form-label">{{ __t('formStepName2TitlerFloor') }} <span
                                                             class="mandatory">*</span></label>
                                                     <input type="number" class="form-control" name="floor"
                                                         placeholder="0" required />
                                                 </div>
                                                 <div class="col-lg-12 mb-3 form-group">
-                                                    <label class="form-label">Special Features <span
-                                                            class="mandatory">*</span></label>
+                                                    <label
+                                                        class="form-label">{{ __t('formStepName2TitlerSpecialFeatures') }}
+                                                        <span class="mandatory">*</span></label>
                                                     <div class="row checkbox_list">
                                                         <?php
-                                                        $fontTexts = ['Equipped kitchen', 'Open kitchen', 'Dishwasher', 'Parquet', 'Tiling', 'Double glazing', 'Triple glazing', 'Wall cabinets', 'Dressing', 'Private laundry room', 'Cellar', 'Elevator', 'Chimney', 'Fiber optic connection', 'Minergie', 'Separate WC', 'Washing column', 'Balcony', 'Terrace', 'Private garden', 'Parking space', 'Garage', 'Closed box', 'Bicycle storage', 'Pool', 'View of the lake', 'View of the Alps', 'Clear view', 'Southern exposure', 'South-west exposure', 'Top floor'];
+                                                        $fontTexts = [
+                                                            __t('formStepName2SpecialFeaturesSelction1'),
+                                                            __t('formStepName2SpecialFeaturesSelction2'),
+                                                            __t('formStepName2SpecialFeaturesSelction3'),
+                                                            __t('formStepName2SpecialFeaturesSelction4'),
+                                                            __t('formStepName2SpecialFeaturesSelction5'),
+                                                            __t('formStepName2SpecialFeaturesSelction6'),
+                                                            __t('formStepName2SpecialFeaturesSelction7'),
+                                                            __t('formStepName2SpecialFeaturesSelction8'),
+                                                            __t('formStepName2SpecialFeaturesSelction9'),
+                                                            __t('formStepName2SpecialFeaturesSelction10'),
+                                                            __t('formStepName2SpecialFeaturesSelction11'),
+                                                            __t('formStepName2SpecialFeaturesSelction12'),
+                                                            __t('formStepName2SpecialFeaturesSelction13'),
+                                                            __t('formStepName2SpecialFeaturesSelction14'),
+                                                            __t('formStepName2SpecialFeaturesSelction15'),
+                                                            __t('formStepName2SpecialFeaturesSelction16'),
+                                                            __t('formStepName2SpecialFeaturesSelction17'),
+                                                            __t('formStepName2SpecialFeaturesSelction18'),
+                                                            __t('formStepName2SpecialFeaturesSelction19'),
+                                                            __t('formStepName2SpecialFeaturesSelction20'),
+                                                            __t('formStepName2SpecialFeaturesSelction21'),
+                                                            __t('formStepName2SpecialFeaturesSelction22'),
+                                                            __t('formStepName2SpecialFeaturesSelction23'),
+                                                            __t('formStepName2SpecialFeaturesSelction24'),
+                                                            __t('formStepName2SpecialFeaturesSelction25'),
+                                                            __t('formStepName2SpecialFeaturesSelction26'),
+                                                            __t('formStepName2SpecialFeaturesSelction27'),
+                                                            __t('formStepName2SpecialFeaturesSelction28'),
+                                                            __t('formStepName2SpecialFeaturesSelction29'),
+                                                            __t('formStepName2SpecialFeaturesSelction30'),
+                                                            __t('formStepName2SpecialFeaturesSelction31'),
+                                                            __t('formStepName2SpecialFeaturesSelction32'),
+                                                            __t('formStepName2SpecialFeaturesSelction33'),
+                                                            __t('formStepName2SpecialFeaturesSelction34'),
+                                                            __t('formStepName2SpecialFeaturesSelction35'),
+                                                            __t('formStepName2SpecialFeaturesSelction36'),
+                                                            __t('formStepName2SpecialFeaturesSelction37'),
+                                                            __t('formStepName2SpecialFeaturesSelction38'),
+                                                            __t('formStepName2SpecialFeaturesSelction39'),
+                                                            __t('formStepName2SpecialFeaturesSelction40'),
+                                                        ];
 
                                                         ?>
                                                         @foreach ($fontTexts as $fonttext)
-
-
-                                                        <div class="col-md-4 mb-2">
-                                                            <div class="checkbox">
-                                                                <label><input type="checkbox" name="features[]"
-                                                                        value="{{$fonttext}}" />{{$fonttext}}</label>
+                                                            <div class="col-md-4 mb-2">
+                                                                <div class="checkbox">
+                                                                    <label><input type="checkbox" name="features[]"
+                                                                            value="{{ $fonttext }}" />{{ $fonttext }}</label>
+                                                                </div>
                                                             </div>
-                                                        </div>
                                                         @endforeach
 
                                                     </div>
@@ -308,10 +397,10 @@
                                             </div>
                                         </div>
                                         <div class="form_vidget">
-                                            <h4 class="tab_title mb-4">Description</h4>
+                                            <h4 class="tab_title mb-4">{{__t('formStepName2Description')}}</h4>
                                             <div class="row">
                                                 <div class="col-lg-12 mb-3 form-group">
-                                                    <label class="form-label">Detailed description <span
+                                                    <label class="form-label">{{__t('formStepName2DescriptionDetail')}} <span
                                                             class="mandatory">*</span></label>
                                                     <textarea class="form-control" name="description" style="height: 100px"
                                                         placeholder="Describe your property in detail..."></textarea>
@@ -321,10 +410,10 @@
                                     </div>
 
                                     <div class="tab d-none">
-                                        <h4 class="tab_title mb-4">Photos and documents</h4>
+                                        <h4 class="tab_title mb-4">{{__t('formStepName3PhotoDocument')}}</h4>
                                         <div class="row">
                                             <div class="col-lg-12 mb-3 form-group">
-                                                <label class="form-label">Photos (max. 5) <span
+                                                <label class="form-label">{{__t('formStepName3PhOTO')}} <span
                                                         class="mandatory">*</span></label>
                                                 <div>
                                                     <div class="upload__box">
@@ -332,9 +421,9 @@
                                                             <label class="upload__btn">
                                                                 <img src="images/upload_icon_gray.svg" alt=""
                                                                     class="mb-2" />
-                                                                <h4 class="mb-2">Upload images</h4>
+                                                                <h4 class="mb-2">{{__t('formStepName3Upload')}}</h4>
                                                                 <h5 class="mb-1">PNG, JPG up to 10MB</h5>
-                                                                <p class="file_count mb-0">0 /5 images</p>
+                                                                <p class="file_count mb-0">{{__t('formStepName3Image')}}</p>
                                                                 <input type="file" name="photos[]" multiple
                                                                     data-max_length="5" class="upload__inputfile" />
                                                             </label>
@@ -344,7 +433,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mb-3 form-group">
-                                                <label class="form-label">PDF documents (max. 3)</label>
+                                                <label class="form-label">{{__t('formStepName3PDFdOC')}}</label>
                                                 <div>
                                                     <div class="upload__box">
                                                         <div class="upload__btn-box">
@@ -353,7 +442,7 @@
                                                                     class="mb-2" />
                                                                 <h4 class="mb-2">Upload PDFs</h4>
                                                                 <h5 class="mb-1">PDF files up to 10MB</h5>
-                                                                <p class="file_count mb-0">0 / 3 PDFs</p>
+                                                                <p class="file_count mb-0">{{__t('formStepName3Doc')}}</p>
                                                                 <input type="file" name="documents[]" multiple
                                                                     data-max_length="3" class="upload__inputfilePDF"
                                                                     accept=".pdf" />
@@ -368,20 +457,24 @@
                                     <div class="tab d-none">
                                         <div class="img_slider_area imgresize">
                                             <div class="owl_slider">
-                                                <div class="owl-carousel owl-theme preview_image" id="features_img_slider">
+                                                <div class="owl-carousel owl-theme preview_image"
+                                                    id="features_img_slider">
                                                     <div class="item">
                                                         <div class="owl_img">
-                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
+                                                            <img class="preview_image" src="assets/images/properties1.jpg"
+                                                                alt="" />
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="owl_img">
-                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
+                                                            <img class="preview_image" src="assets/images/properties1.jpg"
+                                                                alt="" />
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="owl_img">
-                                                            <img class="preview_image" src="assets/images/properties1.jpg" alt="" />
+                                                            <img class="preview_image" src="assets/images/properties1.jpg"
+                                                                alt="" />
                                                         </div>
                                                     </div>
 
@@ -389,7 +482,7 @@
                                             </div>
                                             <div class="slider_name d-flex">
                                                 <div class="slider_name_left">
-                                                    <h3>Restaurant 0 rooms, 4000 m²</h3>
+                                                    <h3>Restaurant 0 {{__t('formStepName4ROMMS')}}, 4000 m²</h3>
                                                     <p>
                                                         <img src="images/location_icon.svg" alt="" />
                                                         jhsgdgasd , 8888 dsf
@@ -397,7 +490,7 @@
                                                 </div>
                                                 <div class="slider_name_right">
                                                     <h4>88866 CHF</h4>
-                                                    <p>Gross price</p>
+                                                    <p>{{__t('formStepName4GrossPrice')}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -461,7 +554,7 @@
                                         <!--<div class="form_vidget">-->
                                         <!--    <p class="mb-0">-->
                                         <!--        <img src="images/date_icon.svg" class="me-1" alt="" />-->
-                                        <!--        Available from {{ date('Y-m-d')}}-->
+                                        <!--        Available from {{ date('Y-m-d') }}-->
                                         <!--    </p>-->
                                         <!--</div>-->
 
@@ -478,63 +571,57 @@
                                         </div>
                                     </div>
                                     <div class="tab d-none">
-                                        <h4 class="tab_title mb-4">Choose your publication duration</h4>
+                                        <h4 class="tab_title mb-4">{{__t('formStepName5Titel')}}</h4>
                                         <div class="row">
                                             <div class="col-lg-4 col-md-6 col-sm-12">
                                                 <div class="pricing-plan">
-                                                    <h2>Basic</h2>
-                                                    <p>Ideal for a unique ad</p>
-                                                    <h5 class="price">29.90 <sub>CHF</sub></h5>
+                                                    <h2>{{__t('formStepName5TitelBasic')}}</h2>
+                                                    <p>{{__t('formStepName5TitelBasicDescription1')}}</p>
+                                                    <h5 class="price">{{__t('formStepName5TitelBasicPrice')}} </h5>
                                                     <ul class="list_features_price">
-                                                        <li>An ad for 30 days</li>
-                                                        <li>Unlimited HD Photos</li>
-                                                        <li>Basic Statistics</li>
-                                                        <li>Email Support</li>
+                                                        <li>{{__t('formStepName5TitelBasic Period')}}</li>
+                                                        <li>{{__t('formStepName5TitelBasicDescription2')}}</li>
+                                                        <li>{{__t('formStepName5TitelBasicDescription3')}}</li>
                                                     </ul>
                                                     <input type="radio" name="publication_duration" value="basic" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-6 col-sm-12">
                                                 <div class="pricing-plan">
-                                                    <h2>Pro</h2>
-                                                    <p>For Real Estate Agents</p>
-                                                    <h5 class="price">79.90 <sub>CHF</sub></h5>
+                                                    <h2>{{__t('formStepName5TitelStandard')}}</h2>
+                                                    <p>{{__t('formStepName5TitelStandardPeriod')}}</p>
+                                                    <h5 class="price">{{__t('formStepName5TitelStandardPrice')}}</h5>
                                                     <ul class="list_features_price">
-                                                        <li>Up to 5 simultaneous announcements</li>
-                                                        <li>Unlimited HD Photos</li>
-                                                        <li>Virtual tour</li>
-                                                        <li>Advanced Statistics</li>
-                                                        <li>Premium position</li>
-                                                        <li>Priority support</li>
+                                                        <li>{{__t('formStepName5TitelStandardDescription1')}}</li>
+                                                        <li>{{__t('formStepName5TitelStandardDescription2')}}</li>
+                                                        <li>{{__t('formStepName5TitelStandardDescription3')}}</li>
+                                                        <li>{{__t('formStepName5TitelStandardDescription4')}}</li>
                                                     </ul>
-                                                    <input type="radio" name="publication_duration" value="pro" />
+                                                    <input type="radio" name="publication_duration" value="stan" />
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 col-md-6 col-sm-12">
                                                 <div class="pricing-plan">
-                                                    <h2>Premium</h2>
-                                                    <p>Complete solution for professionals</p>
-                                                    <h5 class="price">149.90 <sub>CHF</sub></h5>
+                                                    <h2>{{__t('formStepName5TitelPremium')}}</h2>
+                                                    <p>{{__t('formStepName5TitelPremiumPeriod')}}</p>
+                                                    <h5 class="price">{{__t('formStepName5TitelPremiumPrice')}}</h5>
                                                     <ul class="list_features_price">
-                                                        <li>Unlimited Ads</li>
-                                                        <li>HD Photos and Videos</li>
-                                                        <li>3D Virtual Tour</li>
-                                                        <li>Detailed statistics</li>
-                                                        <li>Guaranteed premium position</li>
-                                                        <li>Dedicated support 7 days a week</li>
-                                                        <li>Exporting contacts</li>
-                                                        <li>API available</li>
+                                                        <li>{{__t('formStepName5TitelPremiumDescription1')}}</li>
+                                                        <li>{{__t('formStepName5TitelPremiumDescription2')}}</li>
+                                                        <li>{{__t('formStepName5TitelPremiumDescription3')}}</li>
+                                                        <li>{{__t('formStepName5TitelPremiumDescription4')}}</li>
+                                                        <li>{{__t('formStepName5TitelPremiumDescription5')}}</li>
                                                     </ul>
                                                     <input type="radio" name="publication_duration" value="premium" />
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form_vidget mt-3">
-                                            <h4 class="tab_title mb-4">Payment Method</h4>
+                                            <h4 class="tab_title mb-4">{{__t('formStepName5TitelPayment')}}</h4>
                                             <div>
                                                 <label>
                                                     <input type="radio" name="payment_method" value="bank_card" />
-                                                    Bank Card
+                                                    {{__t('formStepName5TitelBankCardButton')}}
                                                 </label>
                                             </div>
                                         </div>
@@ -543,9 +630,9 @@
                                     <div class="wizard_footer text-end mt-3">
                                         <div class="d-flex">
                                             <button type="button" id="back_button" class="btn btn-link"
-                                                onclick="back()">Back</button>
+                                                onclick="back()">{{__t('formStepName4Back')}}</button>
                                             <button type="button" id="next_button"
-                                                class="btn btn_comman ms-auto">Submit</button>
+                                                class="btn btn_comman ms-auto">{{__t('formStepName5TitelPayButton')}}</button>
                                             {{-- <button type="submit">Save Data</button> --}}
                                         </div>
 
@@ -583,7 +670,7 @@
                     .attr("type", "button")
                     .text("Continue")
                     .attr("onclick", "next()");
-                    updatePreview(); // Update preview when reaching the last tab
+                updatePreview(); // Update preview when reaching the last tab
             }
 
             for (var i = 0; i < n; i++) {
@@ -661,10 +748,10 @@
             var features = $("input[name='features[]']:checked").map(function() {
                 return $(this).val();
             }).get();
-            console.log("features",features);
+            console.log("features", features);
 
             var featuresList = features.map(feature => `<li>${feature}</li>`).join('');
-            console.log("featuresList",featuresList);
+            console.log("featuresList", featuresList);
 
             $(".list_style_feat").html(featuresList);
         }
@@ -711,43 +798,46 @@
                                 ")' data-file='" +
                                 f.name +
                                 "' class='img-bg'><div class='upload__img-close'></div></div></div>";
-                            var sliderprevhtml=`<div class="item">
+                            var sliderprevhtml = `<div class="item">
                                                         <div class="owl_img">
                                                             <img class="preview_image"  src="${e.target.result}" alt="" />
                                                         </div>
                                                     </div>`;
-                                                    $("#features_img_slider").append(sliderprevhtml);
+                            $("#features_img_slider").append(sliderprevhtml);
 
                             imgWrap.append(html);
                             updateFileCount(fileCountElement);
                             // Destroy and reinitialize Owl Carousel
-                    var owl = $("#features_img_slider");
-                    owl.owlCarousel('destroy');
-                    owl.owlCarousel({
-                        autoplay:false,
-                        loop:false,
-                        nav:true,
-                        dots:false,
-                        margin:0,
-                        // center: true,
-                        animationSpeed: 200,
-                        
-                        //animateOut: 'fadeOut',
-                        items: 1,
-                        navText: [ '<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>' ],
-    
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            600: {
-                                items: 1
-                            },
-                            1000: {
-                                items: 1
-                            }
-                        }
-                    });
+                            var owl = $("#features_img_slider");
+                            owl.owlCarousel('destroy');
+                            owl.owlCarousel({
+                                autoplay: false,
+                                loop: false,
+                                nav: true,
+                                dots: false,
+                                margin: 0,
+                                // center: true,
+                                animationSpeed: 200,
+
+                                //animateOut: 'fadeOut',
+                                items: 1,
+                                navText: [
+                                    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                                    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                                ],
+
+                                responsive: {
+                                    0: {
+                                        items: 1
+                                    },
+                                    600: {
+                                        items: 1
+                                    },
+                                    1000: {
+                                        items: 1
+                                    }
+                                }
+                            });
 
                             // Set the src of images with class 'preview_image'
                             // $(".preview_image").each(function(index) {
@@ -828,7 +918,7 @@
                             "</div></div>";
                         fileWrap.append(html);
 
-                        let prevpdf=`<p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
+                        let prevpdf = `<p class="p-2 mb-2 rounded" style="background-color: #f9f4f4">
                                                         ${f.name}
                                                     </p>`;
                         $(".preview_documents").append(prevpdf);
