@@ -17,8 +17,8 @@
                         </div>
                         <hr />
                         <div class="profile_info">
-                            <p><strong>{{__t('dashboardInfoTitle')}}/strong></p>
-                            <p>{{_t('dashboardInfoEmail')}}: {{Auth::user()->email}}</p>
+                            <p><strong>{{__t('dashboardInfoTitle')}}</strong></p>
+                            <p>{{__t('dashboardInfoEmail')}}: {{Auth::user()->email}}</p>
                             <p>{{__t('dashboardInfoCountActiveAds')}}: 3</p>
                             <p>{{__t('dashboardInfoCountActiveRequest')}}: 3</p>
                         </div>
